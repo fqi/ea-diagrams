@@ -1,0 +1,3495 @@
+<VisioDocument>
+  <Fonts>
+  </Fonts>
+  <Masters>
+    <Master ID="0" NameU="Rounded rectangle">
+      <Shapes>
+        <Shape ID="6" Type="Shape">
+          <XForm>
+            <PinX>0</PinX>
+            <PinY>0</PinY>
+            <Width>1</Width>
+            <Height>1</Height>
+            <LocPinX F="Width*0.5">0.5</LocPinX>
+            <LocPinY F="Height*0.5">0.5</LocPinY>
+            <Angle>0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <Scratch IX="0">
+            <X F="Min(Width/2,Height/2,Max(Controls.X1,0))">0</X>
+          </Scratch>
+          <Control IX="0">
+            <X>0</X>
+            <Y Unit="MM" F="Height*0">0</Y>
+            <XDyn Unit="MM">0</XDyn>
+            <YDyn Unit="MM">0</YDyn>
+            <CanGlue>0</CanGlue>
+          </Control>
+          <Geom IX="0">
+            <NoFill>0</NoFill>
+            <MoveTo IX="1">
+              <X Unit="MM" F="Geometry1.X2-Scratch.X1">0</X>
+              <Y F="Min(0,Height/2-Scratch.X1)">0</Y>
+            </MoveTo>
+            <ArcTo IX="2">
+              <X Unit="MM" F="Max(Width,Width/2+Scratch.X1)">0</X>
+              <Y F="Geometry1.Y1+Scratch.X1">0</Y>
+              <A Unit="DL" F="Scratch.X1*0.29289">0</A>
+            </ArcTo>
+            <LineTo IX="3">
+              <X Unit="MM" F="Geometry1.X2">0</X>
+              <Y Unit="MM" F="Geometry1.Y4-Scratch.X1">0</Y>
+            </LineTo>
+            <ArcTo IX="4">
+              <X Unit="MM" F="Geometry1.X1">0</X>
+              <Y Unit="MM" F="Height-Geometry1.Y1">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="5">
+              <X Unit="MM" F="Geometry1.X6+Scratch.X1">0</X>
+              <Y Unit="MM" F="Geometry1.Y4">0</Y>
+            </LineTo>
+            <ArcTo IX="6">
+              <X Unit="MM" F="Width-Geometry1.X2">0</X>
+              <Y Unit="MM" F="Height-Geometry1.Y2">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="7">
+              <X Unit="MM" F="Geometry1.X6">0</X>
+              <Y F="Geometry1.Y2">0.19685039</Y>
+            </LineTo>
+            <ArcTo IX="8">
+              <X Unit="MM" F="Geometry1.X5">0</X>
+              <Y F="Geometry1.Y1">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="9">
+              <X Unit="MM" F="Geometry1.X1">0</X>
+              <Y F="Geometry1.Y1">0</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+      </Shapes>
+    </Master>
+  </Masters>
+  <Pages>
+    <Page ID="0" NameU="Page-X">
+      <PageSheet>
+        <PageProps>
+          <PageHeight>6.1958337</PageHeight>
+          <PageWidth>16.76354</PageWidth>
+          <PageScale Unit="IN_F">1</PageScale>
+          <DrawingScale Unit="IN_F">1</DrawingScale>
+          <DrawingSizeType>4</DrawingSizeType>
+          <DrawingScaleType>3</DrawingScaleType>
+          <InhibitSnap>0</InhibitSnap>
+        </PageProps>
+      </PageSheet>
+      <Shapes>
+        <Shape ID="1" NameU="Rounded rectangle" Type="Shape" Master="0">
+          <XForm>
+            <PinX>12.864583</PinX>
+            <PinY>1.1041667</PinY>
+            <Width>2.71875</Width>
+            <Height>0.39583337</Height>
+            <LocPinX F="Inh">1.359375</LocPinX>
+            <LocPinY F="Inh">0.19791669</LocPinY>
+            <Angle Unit="DEG" F="Inh">0</Angle>
+            <FlipX F="Inh">0</FlipX>
+            <FlipY F="Inh">0</FlipY>
+            <ResizeMode F="Inh">0</ResizeMode>
+          </XForm>
+          <Fill>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillBkgnd F="Inh">0</FillBkgnd>
+            <FillPattern F="Inh">1</FillPattern>
+            <ShdwForegnd F="Inh">0</ShdwForegnd>
+            <ShdwBkgnd F="Inh">1</ShdwBkgnd>
+            <FillForegndTrans F="Inh">0</FillForegndTrans>
+            <FillBkgndTrans F="Inh">0</FillBkgndTrans>
+            <ShdwForegndTrans F="Inh">0</ShdwForegndTrans>
+            <ShdwBkgndTrans F="Inh">0</ShdwBkgndTrans>
+          </Fill>
+          <Para IX="0">
+            <HorzAlign F="1">1</HorzAlign>
+          </Para>
+          <Scratch IX="0">
+            <X Unit="MM" F="Inh">0</X>
+          </Scratch>
+          <Connection IX="0">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*1">0</Y>
+            <DirX>0</DirX>
+            <DirY>-1</DirY>
+          </Connection>
+          <Connection IX="1">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Connection IX="2">
+            <X F="Width*0">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="3">
+            <X F="Width*1">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>-1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="4">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Control IX="0">
+            <X Unit="MM">0</X>
+            <Y F="Inh">0</Y>
+            <XDyn Unit="MM" F="Inh">0</XDyn>
+            <YDyn Unit="MM" F="Inh">0</YDyn>
+            <XCon F="Inh">2</XCon>
+            <YCon F="Inh">1</YCon>
+            <CanGlue F="Inh">0</CanGlue>
+            <Prompt F="Inh">Adjust Corner Rounding</Prompt>
+          </Control>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color>#000000</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.09099999</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>0</NoFill>
+            <MoveTo IX="1">
+              <X Unit="MM" F="Geometry1.X2-Scratch.X1">2.71875</X>
+              <Y F="Min(0,Height/2-Scratch.X1)">0</Y>
+            </MoveTo>
+            <ArcTo IX="2">
+              <X Unit="MM" F="Max(Width,Width/2+Scratch.X1)">2.71875</X>
+              <Y F="Geometry1.Y1+Scratch.X1">0</Y>
+              <A Unit="DL" F="Scratch.X1*0.29289">0</A>
+            </ArcTo>
+            <LineTo IX="3">
+              <X Unit="MM" F="Geometry1.X2">2.71875</X>
+              <Y Unit="MM" F="Geometry1.Y4-Scratch.X1">0.39583337</Y>
+            </LineTo>
+            <ArcTo IX="4">
+              <X Unit="MM" F="Geometry1.X1">2.71875</X>
+              <Y Unit="MM" F="Height-Geometry1.Y1">0.39583337</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="5">
+              <X Unit="MM" F="Geometry1.X6+Scratch.X1">0</X>
+              <Y Unit="MM" F="Geometry1.Y4">0.39583337</Y>
+            </LineTo>
+            <ArcTo IX="6">
+              <X Unit="MM" F="Width-Geometry1.X2">0</X>
+              <Y Unit="MM" F="Height-Geometry1.Y2">0.39583337</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="7">
+              <X Unit="MM" F="Geometry1.X6">0</X>
+              <Y F="Geometry1.Y2">0</Y>
+            </LineTo>
+            <ArcTo IX="8">
+              <X Unit="MM" F="Geometry1.X5">0</X>
+              <Y F="Geometry1.Y1">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="9">
+              <X Unit="MM" F="Geometry1.X1">2.71875</X>
+              <Y F="Geometry1.Y1">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>DO WHILE ( IO_PCB . STATCD = ' ' )</Text>
+          <Connection IX="5">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="6">
+            <X F="Width*0.8103448">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="7">
+            <X F="Width*0.68390805">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="8">
+            <X F="Width*0.5613028">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="9">
+            <X F="Width*0.31609195">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="10">
+            <X F="Width*0.43869755">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="11">
+            <X F="Width*0.18965517">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="12">
+            <X F="Width*0.06321839">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="13">
+            <X F="Width*0.9367816">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+        </Shape>
+        <Shape ID="2" NameU="Rounded rectangle" Type="Shape" Master="0">
+          <XForm>
+            <PinX>12.864583</PinX>
+            <PinY>0.20833333</PinY>
+            <Width>1.59375</Width>
+            <Height>0.39583334</Height>
+            <LocPinX F="Inh">0.796875</LocPinX>
+            <LocPinY F="Inh">0.19791667</LocPinY>
+            <Angle Unit="DEG" F="Inh">0</Angle>
+            <FlipX F="Inh">0</FlipX>
+            <FlipY F="Inh">0</FlipY>
+            <ResizeMode F="Inh">0</ResizeMode>
+          </XForm>
+          <Fill>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillBkgnd F="Inh">0</FillBkgnd>
+            <FillPattern F="Inh">1</FillPattern>
+            <ShdwForegnd F="Inh">0</ShdwForegnd>
+            <ShdwBkgnd F="Inh">1</ShdwBkgnd>
+            <FillForegndTrans F="Inh">0</FillForegndTrans>
+            <FillBkgndTrans F="Inh">0</FillBkgndTrans>
+            <ShdwForegndTrans F="Inh">0</ShdwForegndTrans>
+            <ShdwBkgndTrans F="Inh">0</ShdwBkgndTrans>
+          </Fill>
+          <Para IX="0">
+            <HorzAlign F="1">1</HorzAlign>
+          </Para>
+          <Scratch IX="0">
+            <X Unit="MM" F="Inh">0</X>
+          </Scratch>
+          <Connection IX="0">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*1">0</Y>
+            <DirX>0</DirX>
+            <DirY>-1</DirY>
+          </Connection>
+          <Connection IX="1">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Connection IX="2">
+            <X F="Width*0">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="3">
+            <X F="Width*1">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>-1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="4">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Control IX="0">
+            <X Unit="MM">0</X>
+            <Y F="Inh">0</Y>
+            <XDyn Unit="MM" F="Inh">0</XDyn>
+            <YDyn Unit="MM" F="Inh">0</YDyn>
+            <XCon F="Inh">2</XCon>
+            <YCon F="Inh">1</YCon>
+            <CanGlue F="Inh">0</CanGlue>
+            <Prompt F="Inh">Adjust Corner Rounding</Prompt>
+          </Control>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color>#000000</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.09099999</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>0</NoFill>
+            <MoveTo IX="1">
+              <X Unit="MM" F="Geometry1.X2-Scratch.X1">1.59375</X>
+              <Y F="Min(0,Height/2-Scratch.X1)">0</Y>
+            </MoveTo>
+            <ArcTo IX="2">
+              <X Unit="MM" F="Max(Width,Width/2+Scratch.X1)">1.59375</X>
+              <Y F="Geometry1.Y1+Scratch.X1">0</Y>
+              <A Unit="DL" F="Scratch.X1*0.29289">0</A>
+            </ArcTo>
+            <LineTo IX="3">
+              <X Unit="MM" F="Geometry1.X2">1.59375</X>
+              <Y Unit="MM" F="Geometry1.Y4-Scratch.X1">0.39583334</Y>
+            </LineTo>
+            <ArcTo IX="4">
+              <X Unit="MM" F="Geometry1.X1">1.59375</X>
+              <Y Unit="MM" F="Height-Geometry1.Y1">0.39583334</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="5">
+              <X Unit="MM" F="Geometry1.X6+Scratch.X1">0</X>
+              <Y Unit="MM" F="Geometry1.Y4">0.39583334</Y>
+            </LineTo>
+            <ArcTo IX="6">
+              <X Unit="MM" F="Width-Geometry1.X2">0</X>
+              <Y Unit="MM" F="Height-Geometry1.Y2">0.39583334</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="7">
+              <X Unit="MM" F="Geometry1.X6">0</X>
+              <Y F="Geometry1.Y2">0</Y>
+            </LineTo>
+            <ArcTo IX="8">
+              <X Unit="MM" F="Geometry1.X5">0</X>
+              <Y F="Geometry1.Y1">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="9">
+              <X Unit="MM" F="Geometry1.X1">1.59375</X>
+              <Y F="Geometry1.Y1">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>DSSMPADP_PROC</Text>
+          <Connection IX="5">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+        </Shape>
+        <Shape ID="3" NameU="Rounded rectangle" Type="Shape" Master="0">
+          <XForm>
+            <PinX>14.197917</PinX>
+            <PinY>3.9166667</PinY>
+            <Width>1.25</Width>
+            <Height>0.3958335</Height>
+            <LocPinX F="Inh">0.625</LocPinX>
+            <LocPinY F="Inh">0.19791675</LocPinY>
+            <Angle Unit="DEG" F="Inh">0</Angle>
+            <FlipX F="Inh">0</FlipX>
+            <FlipY F="Inh">0</FlipY>
+            <ResizeMode F="Inh">0</ResizeMode>
+          </XForm>
+          <Fill>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillBkgnd F="Inh">0</FillBkgnd>
+            <FillPattern F="Inh">1</FillPattern>
+            <ShdwForegnd F="Inh">0</ShdwForegnd>
+            <ShdwBkgnd F="Inh">1</ShdwBkgnd>
+            <FillForegndTrans F="Inh">0</FillForegndTrans>
+            <FillBkgndTrans F="Inh">0</FillBkgndTrans>
+            <ShdwForegndTrans F="Inh">0</ShdwForegndTrans>
+            <ShdwBkgndTrans F="Inh">0</ShdwBkgndTrans>
+          </Fill>
+          <Para IX="0">
+            <HorzAlign F="1">1</HorzAlign>
+          </Para>
+          <Scratch IX="0">
+            <X Unit="MM" F="Inh">0</X>
+          </Scratch>
+          <Connection IX="0">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*1">0</Y>
+            <DirX>0</DirX>
+            <DirY>-1</DirY>
+          </Connection>
+          <Connection IX="1">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Connection IX="2">
+            <X F="Width*0">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="3">
+            <X F="Width*1">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>-1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="4">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Control IX="0">
+            <X Unit="MM">0</X>
+            <Y F="Inh">0</Y>
+            <XDyn Unit="MM" F="Inh">0</XDyn>
+            <YDyn Unit="MM" F="Inh">0</YDyn>
+            <XCon F="Inh">2</XCon>
+            <YCon F="Inh">1</YCon>
+            <CanGlue F="Inh">0</CanGlue>
+            <Prompt F="Inh">Adjust Corner Rounding</Prompt>
+          </Control>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color>#000000</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.09099999</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>0</NoFill>
+            <MoveTo IX="1">
+              <X Unit="MM" F="Geometry1.X2-Scratch.X1">1.25</X>
+              <Y F="Min(0,Height/2-Scratch.X1)">0</Y>
+            </MoveTo>
+            <ArcTo IX="2">
+              <X Unit="MM" F="Max(Width,Width/2+Scratch.X1)">1.25</X>
+              <Y F="Geometry1.Y1+Scratch.X1">0</Y>
+              <A Unit="DL" F="Scratch.X1*0.29289">0</A>
+            </ArcTo>
+            <LineTo IX="3">
+              <X Unit="MM" F="Geometry1.X2">1.25</X>
+              <Y Unit="MM" F="Geometry1.Y4-Scratch.X1">0.3958335</Y>
+            </LineTo>
+            <ArcTo IX="4">
+              <X Unit="MM" F="Geometry1.X1">1.25</X>
+              <Y Unit="MM" F="Height-Geometry1.Y1">0.3958335</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="5">
+              <X Unit="MM" F="Geometry1.X6+Scratch.X1">0</X>
+              <Y Unit="MM" F="Geometry1.Y4">0.3958335</Y>
+            </LineTo>
+            <ArcTo IX="6">
+              <X Unit="MM" F="Width-Geometry1.X2">0</X>
+              <Y Unit="MM" F="Height-Geometry1.Y2">0.3958335</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="7">
+              <X Unit="MM" F="Geometry1.X6">0</X>
+              <Y F="Geometry1.Y2">0</Y>
+            </LineTo>
+            <ArcTo IX="8">
+              <X Unit="MM" F="Geometry1.X5">0</X>
+              <Y F="Geometry1.Y1">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="9">
+              <X Unit="MM" F="Geometry1.X1">1.25</X>
+              <Y F="Geometry1.Y1">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>IF I_AM_DEAD</Text>
+          <Connection IX="5">
+            <X F="Width*0.83333284">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="6">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="7">
+            <X F="Width*0.16666642">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="8">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+        </Shape>
+        <Shape ID="4" NameU="Rounded rectangle" Type="Shape" Master="0">
+          <XForm>
+            <PinX>14.197917</PinX>
+            <PinY>4.8125</PinY>
+            <Width>4.552084</Width>
+            <Height>0.39583302</Height>
+            <LocPinX F="Inh">2.276042</LocPinX>
+            <LocPinY F="Inh">0.19791651</LocPinY>
+            <Angle Unit="DEG" F="Inh">0</Angle>
+            <FlipX F="Inh">0</FlipX>
+            <FlipY F="Inh">0</FlipY>
+            <ResizeMode F="Inh">0</ResizeMode>
+          </XForm>
+          <Fill>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillBkgnd F="Inh">0</FillBkgnd>
+            <FillPattern F="Inh">1</FillPattern>
+            <ShdwForegnd F="Inh">0</ShdwForegnd>
+            <ShdwBkgnd F="Inh">1</ShdwBkgnd>
+            <FillForegndTrans F="Inh">0</FillForegndTrans>
+            <FillBkgndTrans F="Inh">0</FillBkgndTrans>
+            <ShdwForegndTrans F="Inh">0</ShdwForegndTrans>
+            <ShdwBkgndTrans F="Inh">0</ShdwBkgndTrans>
+          </Fill>
+          <Para IX="0">
+            <HorzAlign F="1">1</HorzAlign>
+          </Para>
+          <Scratch IX="0">
+            <X Unit="MM" F="Inh">0</X>
+          </Scratch>
+          <Connection IX="0">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*1">0</Y>
+            <DirX>0</DirX>
+            <DirY>-1</DirY>
+          </Connection>
+          <Connection IX="1">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Connection IX="2">
+            <X F="Width*0">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="3">
+            <X F="Width*1">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>-1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="4">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Control IX="0">
+            <X Unit="MM">0</X>
+            <Y F="Inh">0</Y>
+            <XDyn Unit="MM" F="Inh">0</XDyn>
+            <YDyn Unit="MM" F="Inh">0</YDyn>
+            <XCon F="Inh">2</XCon>
+            <YCon F="Inh">1</YCon>
+            <CanGlue F="Inh">0</CanGlue>
+            <Prompt F="Inh">Adjust Corner Rounding</Prompt>
+          </Control>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color>#000000</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.09099999</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>0</NoFill>
+            <MoveTo IX="1">
+              <X Unit="MM" F="Geometry1.X2-Scratch.X1">4.552084</X>
+              <Y F="Min(0,Height/2-Scratch.X1)">0</Y>
+            </MoveTo>
+            <ArcTo IX="2">
+              <X Unit="MM" F="Max(Width,Width/2+Scratch.X1)">4.552084</X>
+              <Y F="Geometry1.Y1+Scratch.X1">0</Y>
+              <A Unit="DL" F="Scratch.X1*0.29289">0</A>
+            </ArcTo>
+            <LineTo IX="3">
+              <X Unit="MM" F="Geometry1.X2">4.552084</X>
+              <Y Unit="MM" F="Geometry1.Y4-Scratch.X1">0.39583302</Y>
+            </LineTo>
+            <ArcTo IX="4">
+              <X Unit="MM" F="Geometry1.X1">4.552084</X>
+              <Y Unit="MM" F="Height-Geometry1.Y1">0.39583302</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="5">
+              <X Unit="MM" F="Geometry1.X6+Scratch.X1">0</X>
+              <Y Unit="MM" F="Geometry1.Y4">0.39583302</Y>
+            </LineTo>
+            <ArcTo IX="6">
+              <X Unit="MM" F="Width-Geometry1.X2">0</X>
+              <Y Unit="MM" F="Height-Geometry1.Y2">0.39583302</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="7">
+              <X Unit="MM" F="Geometry1.X6">0</X>
+              <Y F="Geometry1.Y2">0</Y>
+            </LineTo>
+            <ArcTo IX="8">
+              <X Unit="MM" F="Geometry1.X5">0</X>
+              <Y F="Geometry1.Y1">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="9">
+              <X Unit="MM" F="Geometry1.X1">4.552084</X>
+              <Y F="Geometry1.Y1">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>IF EDITS_OK ( ) &amp; LNUM_NACD_VALID ( ) &amp; STATUS_VALID ( )</Text>
+          <Connection IX="5">
+            <X F="Width*0.1681922">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="6">
+            <X F="Width*0.8318076">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="7">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+        </Shape>
+        <Shape ID="5" NameU="Rounded rectangle" Type="Shape" Master="0">
+          <XForm>
+            <PinX>4.3125</PinX>
+            <PinY>2</PinY>
+            <Width>1.8125</Width>
+            <Height>0.39583337</Height>
+            <LocPinX F="Inh">0.90625</LocPinX>
+            <LocPinY F="Inh">0.19791669</LocPinY>
+            <Angle Unit="DEG" F="Inh">0</Angle>
+            <FlipX F="Inh">0</FlipX>
+            <FlipY F="Inh">0</FlipY>
+            <ResizeMode F="Inh">0</ResizeMode>
+          </XForm>
+          <Fill>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillBkgnd F="Inh">0</FillBkgnd>
+            <FillPattern F="Inh">1</FillPattern>
+            <ShdwForegnd F="Inh">0</ShdwForegnd>
+            <ShdwBkgnd F="Inh">1</ShdwBkgnd>
+            <FillForegndTrans F="Inh">0</FillForegndTrans>
+            <FillBkgndTrans F="Inh">0</FillBkgndTrans>
+            <ShdwForegndTrans F="Inh">0</ShdwForegndTrans>
+            <ShdwBkgndTrans F="Inh">0</ShdwBkgndTrans>
+          </Fill>
+          <Para IX="0">
+            <HorzAlign F="1">1</HorzAlign>
+          </Para>
+          <Scratch IX="0">
+            <X Unit="MM" F="Inh">0</X>
+          </Scratch>
+          <Connection IX="0">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*1">0</Y>
+            <DirX>0</DirX>
+            <DirY>-1</DirY>
+          </Connection>
+          <Connection IX="1">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Connection IX="2">
+            <X F="Width*0">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="3">
+            <X F="Width*1">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>-1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="4">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Control IX="0">
+            <X Unit="MM">0</X>
+            <Y F="Inh">0</Y>
+            <XDyn Unit="MM" F="Inh">0</XDyn>
+            <YDyn Unit="MM" F="Inh">0</YDyn>
+            <XCon F="Inh">2</XCon>
+            <YCon F="Inh">1</YCon>
+            <CanGlue F="Inh">0</CanGlue>
+            <Prompt F="Inh">Adjust Corner Rounding</Prompt>
+          </Control>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color>#000000</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.09099999</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>0</NoFill>
+            <MoveTo IX="1">
+              <X Unit="MM" F="Geometry1.X2-Scratch.X1">1.8125</X>
+              <Y F="Min(0,Height/2-Scratch.X1)">0</Y>
+            </MoveTo>
+            <ArcTo IX="2">
+              <X Unit="MM" F="Max(Width,Width/2+Scratch.X1)">1.8125</X>
+              <Y F="Geometry1.Y1+Scratch.X1">0</Y>
+              <A Unit="DL" F="Scratch.X1*0.29289">0</A>
+            </ArcTo>
+            <LineTo IX="3">
+              <X Unit="MM" F="Geometry1.X2">1.8125</X>
+              <Y Unit="MM" F="Geometry1.Y4-Scratch.X1">0.39583337</Y>
+            </LineTo>
+            <ArcTo IX="4">
+              <X Unit="MM" F="Geometry1.X1">1.8125</X>
+              <Y Unit="MM" F="Height-Geometry1.Y1">0.39583337</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="5">
+              <X Unit="MM" F="Geometry1.X6+Scratch.X1">0</X>
+              <Y Unit="MM" F="Geometry1.Y4">0.39583337</Y>
+            </LineTo>
+            <ArcTo IX="6">
+              <X Unit="MM" F="Width-Geometry1.X2">0</X>
+              <Y Unit="MM" F="Height-Geometry1.Y2">0.39583337</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="7">
+              <X Unit="MM" F="Geometry1.X6">0</X>
+              <Y F="Geometry1.Y2">0</Y>
+            </LineTo>
+            <ArcTo IX="8">
+              <X Unit="MM" F="Geometry1.X5">0</X>
+              <Y F="Geometry1.Y1">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="9">
+              <X Unit="MM" F="Geometry1.X1">1.8125</X>
+              <Y F="Geometry1.Y1">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>IF DELETE_STATUS ( )</Text>
+          <Connection IX="5">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="6">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+        </Shape>
+        <Shape ID="6" NameU="Rounded rectangle" Type="Shape" Master="0">
+          <XForm>
+            <PinX>10.625</PinX>
+            <PinY>3.9166667</PinY>
+            <Width>1.770834</Width>
+            <Height>0.3958335</Height>
+            <LocPinX F="Inh">0.885417</LocPinX>
+            <LocPinY F="Inh">0.19791675</LocPinY>
+            <Angle Unit="DEG" F="Inh">0</Angle>
+            <FlipX F="Inh">0</FlipX>
+            <FlipY F="Inh">0</FlipY>
+            <ResizeMode F="Inh">0</ResizeMode>
+          </XForm>
+          <Fill>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillBkgnd F="Inh">0</FillBkgnd>
+            <FillPattern F="Inh">1</FillPattern>
+            <ShdwForegnd F="Inh">0</ShdwForegnd>
+            <ShdwBkgnd F="Inh">1</ShdwBkgnd>
+            <FillForegndTrans F="Inh">0</FillForegndTrans>
+            <FillBkgndTrans F="Inh">0</FillBkgndTrans>
+            <ShdwForegndTrans F="Inh">0</ShdwForegndTrans>
+            <ShdwBkgndTrans F="Inh">0</ShdwBkgndTrans>
+          </Fill>
+          <Para IX="0">
+            <HorzAlign F="1">1</HorzAlign>
+          </Para>
+          <Scratch IX="0">
+            <X Unit="MM" F="Inh">0</X>
+          </Scratch>
+          <Connection IX="0">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*1">0</Y>
+            <DirX>0</DirX>
+            <DirY>-1</DirY>
+          </Connection>
+          <Connection IX="1">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Connection IX="2">
+            <X F="Width*0">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="3">
+            <X F="Width*1">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>-1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="4">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Control IX="0">
+            <X Unit="MM">0</X>
+            <Y F="Inh">0</Y>
+            <XDyn Unit="MM" F="Inh">0</XDyn>
+            <YDyn Unit="MM" F="Inh">0</YDyn>
+            <XCon F="Inh">2</XCon>
+            <YCon F="Inh">1</YCon>
+            <CanGlue F="Inh">0</CanGlue>
+            <Prompt F="Inh">Adjust Corner Rounding</Prompt>
+          </Control>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color>#000000</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.09099999</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>0</NoFill>
+            <MoveTo IX="1">
+              <X Unit="MM" F="Geometry1.X2-Scratch.X1">1.770834</X>
+              <Y F="Min(0,Height/2-Scratch.X1)">0</Y>
+            </MoveTo>
+            <ArcTo IX="2">
+              <X Unit="MM" F="Max(Width,Width/2+Scratch.X1)">1.770834</X>
+              <Y F="Geometry1.Y1+Scratch.X1">0</Y>
+              <A Unit="DL" F="Scratch.X1*0.29289">0</A>
+            </ArcTo>
+            <LineTo IX="3">
+              <X Unit="MM" F="Geometry1.X2">1.770834</X>
+              <Y Unit="MM" F="Geometry1.Y4-Scratch.X1">0.3958335</Y>
+            </LineTo>
+            <ArcTo IX="4">
+              <X Unit="MM" F="Geometry1.X1">1.770834</X>
+              <Y Unit="MM" F="Height-Geometry1.Y1">0.3958335</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="5">
+              <X Unit="MM" F="Geometry1.X6+Scratch.X1">0</X>
+              <Y Unit="MM" F="Geometry1.Y4">0.3958335</Y>
+            </LineTo>
+            <ArcTo IX="6">
+              <X Unit="MM" F="Width-Geometry1.X2">0</X>
+              <Y Unit="MM" F="Height-Geometry1.Y2">0.3958335</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="7">
+              <X Unit="MM" F="Geometry1.X6">0</X>
+              <Y F="Geometry1.Y2">0</Y>
+            </LineTo>
+            <ArcTo IX="8">
+              <X Unit="MM" F="Geometry1.X5">0</X>
+              <Y F="Geometry1.Y1">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="9">
+              <X Unit="MM" F="Geometry1.X1">1.770834</X>
+              <Y F="Geometry1.Y1">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>IF PURGE_STATUS ( )</Text>
+          <Connection IX="5">
+            <X F="Width*0.8705881">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="6">
+            <X F="Width*0.6235294">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="7">
+            <X F="Width*0.37647063">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="8">
+            <X F="Width*0.74705875">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="9">
+            <X F="Width*0.25294125">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="10">
+            <X F="Width*0.12941189">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+        </Shape>
+        <Shape ID="7" NameU="Rounded rectangle" Type="Shape" Master="0">
+          <XForm>
+            <PinX>1.75</PinX>
+            <PinY>2</PinY>
+            <Width>1.7708335</Width>
+            <Height>0.39583337</Height>
+            <LocPinX F="Inh">0.88541675</LocPinX>
+            <LocPinY F="Inh">0.19791669</LocPinY>
+            <Angle Unit="DEG" F="Inh">0</Angle>
+            <FlipX F="Inh">0</FlipX>
+            <FlipY F="Inh">0</FlipY>
+            <ResizeMode F="Inh">0</ResizeMode>
+          </XForm>
+          <Fill>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillBkgnd F="Inh">0</FillBkgnd>
+            <FillPattern F="Inh">1</FillPattern>
+            <ShdwForegnd F="Inh">0</ShdwForegnd>
+            <ShdwBkgnd F="Inh">1</ShdwBkgnd>
+            <FillForegndTrans F="Inh">0</FillForegndTrans>
+            <FillBkgndTrans F="Inh">0</FillBkgndTrans>
+            <ShdwForegndTrans F="Inh">0</ShdwForegndTrans>
+            <ShdwBkgndTrans F="Inh">0</ShdwBkgndTrans>
+          </Fill>
+          <Para IX="0">
+            <HorzAlign F="1">1</HorzAlign>
+          </Para>
+          <Scratch IX="0">
+            <X Unit="MM" F="Inh">0</X>
+          </Scratch>
+          <Connection IX="0">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*1">0</Y>
+            <DirX>0</DirX>
+            <DirY>-1</DirY>
+          </Connection>
+          <Connection IX="1">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Connection IX="2">
+            <X F="Width*0">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="3">
+            <X F="Width*1">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>-1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="4">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Control IX="0">
+            <X Unit="MM">0</X>
+            <Y F="Inh">0</Y>
+            <XDyn Unit="MM" F="Inh">0</XDyn>
+            <YDyn Unit="MM" F="Inh">0</YDyn>
+            <XCon F="Inh">2</XCon>
+            <YCon F="Inh">1</YCon>
+            <CanGlue F="Inh">0</CanGlue>
+            <Prompt F="Inh">Adjust Corner Rounding</Prompt>
+          </Control>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color>#000000</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.09099999</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>0</NoFill>
+            <MoveTo IX="1">
+              <X Unit="MM" F="Geometry1.X2-Scratch.X1">1.7708335</X>
+              <Y F="Min(0,Height/2-Scratch.X1)">0</Y>
+            </MoveTo>
+            <ArcTo IX="2">
+              <X Unit="MM" F="Max(Width,Width/2+Scratch.X1)">1.7708335</X>
+              <Y F="Geometry1.Y1+Scratch.X1">0</Y>
+              <A Unit="DL" F="Scratch.X1*0.29289">0</A>
+            </ArcTo>
+            <LineTo IX="3">
+              <X Unit="MM" F="Geometry1.X2">1.7708335</X>
+              <Y Unit="MM" F="Geometry1.Y4-Scratch.X1">0.39583337</Y>
+            </LineTo>
+            <ArcTo IX="4">
+              <X Unit="MM" F="Geometry1.X1">1.7708335</X>
+              <Y Unit="MM" F="Height-Geometry1.Y1">0.39583337</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="5">
+              <X Unit="MM" F="Geometry1.X6+Scratch.X1">0</X>
+              <Y Unit="MM" F="Geometry1.Y4">0.39583337</Y>
+            </LineTo>
+            <ArcTo IX="6">
+              <X Unit="MM" F="Width-Geometry1.X2">0</X>
+              <Y Unit="MM" F="Height-Geometry1.Y2">0.39583337</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="7">
+              <X Unit="MM" F="Geometry1.X6">0</X>
+              <Y F="Geometry1.Y2">0</Y>
+            </LineTo>
+            <ArcTo IX="8">
+              <X Unit="MM" F="Geometry1.X5">0</X>
+              <Y F="Geometry1.Y1">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="9">
+              <X Unit="MM" F="Geometry1.X1">1.7708335</X>
+              <Y F="Geometry1.Y1">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>IF QUERY_STATUS ( )</Text>
+          <Connection IX="5">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="6">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+        </Shape>
+        <Shape ID="8" NameU="Rounded rectangle" Type="Shape" Master="0">
+          <XForm>
+            <PinX>0.78125</PinX>
+            <PinY>3.9166667</PinY>
+            <Width>1.5416667</Width>
+            <Height>0.3958335</Height>
+            <LocPinX F="Inh">0.7708334</LocPinX>
+            <LocPinY F="Inh">0.19791675</LocPinY>
+            <Angle Unit="DEG" F="Inh">0</Angle>
+            <FlipX F="Inh">0</FlipX>
+            <FlipY F="Inh">0</FlipY>
+            <ResizeMode F="Inh">0</ResizeMode>
+          </XForm>
+          <Fill>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillBkgnd F="Inh">0</FillBkgnd>
+            <FillPattern F="Inh">1</FillPattern>
+            <ShdwForegnd F="Inh">0</ShdwForegnd>
+            <ShdwBkgnd F="Inh">1</ShdwBkgnd>
+            <FillForegndTrans F="Inh">0</FillForegndTrans>
+            <FillBkgndTrans F="Inh">0</FillBkgndTrans>
+            <ShdwForegndTrans F="Inh">0</ShdwForegndTrans>
+            <ShdwBkgndTrans F="Inh">0</ShdwBkgndTrans>
+          </Fill>
+          <Para IX="0">
+            <HorzAlign F="1">1</HorzAlign>
+          </Para>
+          <Scratch IX="0">
+            <X Unit="MM" F="Inh">0</X>
+          </Scratch>
+          <Connection IX="0">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*1">0</Y>
+            <DirX>0</DirX>
+            <DirY>-1</DirY>
+          </Connection>
+          <Connection IX="1">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Connection IX="2">
+            <X F="Width*0">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="3">
+            <X F="Width*1">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>-1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="4">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Control IX="0">
+            <X Unit="MM">0</X>
+            <Y F="Inh">0</Y>
+            <XDyn Unit="MM" F="Inh">0</XDyn>
+            <YDyn Unit="MM" F="Inh">0</YDyn>
+            <XCon F="Inh">2</XCon>
+            <YCon F="Inh">1</YCon>
+            <CanGlue F="Inh">0</CanGlue>
+            <Prompt F="Inh">Adjust Corner Rounding</Prompt>
+          </Control>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color>#000000</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.09099999</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>0</NoFill>
+            <MoveTo IX="1">
+              <X Unit="MM" F="Geometry1.X2-Scratch.X1">1.5416667</X>
+              <Y F="Min(0,Height/2-Scratch.X1)">0</Y>
+            </MoveTo>
+            <ArcTo IX="2">
+              <X Unit="MM" F="Max(Width,Width/2+Scratch.X1)">1.5416667</X>
+              <Y F="Geometry1.Y1+Scratch.X1">0</Y>
+              <A Unit="DL" F="Scratch.X1*0.29289">0</A>
+            </ArcTo>
+            <LineTo IX="3">
+              <X Unit="MM" F="Geometry1.X2">1.5416667</X>
+              <Y Unit="MM" F="Geometry1.Y4-Scratch.X1">0.3958335</Y>
+            </LineTo>
+            <ArcTo IX="4">
+              <X Unit="MM" F="Geometry1.X1">1.5416667</X>
+              <Y Unit="MM" F="Height-Geometry1.Y1">0.3958335</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="5">
+              <X Unit="MM" F="Geometry1.X6+Scratch.X1">0</X>
+              <Y Unit="MM" F="Geometry1.Y4">0.3958335</Y>
+            </LineTo>
+            <ArcTo IX="6">
+              <X Unit="MM" F="Width-Geometry1.X2">0</X>
+              <Y Unit="MM" F="Height-Geometry1.Y2">0.3958335</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="7">
+              <X Unit="MM" F="Geometry1.X6">0</X>
+              <Y F="Geometry1.Y2">0</Y>
+            </LineTo>
+            <ArcTo IX="8">
+              <X Unit="MM" F="Geometry1.X5">0</X>
+              <Y F="Geometry1.Y1">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="9">
+              <X Unit="MM" F="Geometry1.X1">1.5416667</X>
+              <Y F="Geometry1.Y1">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>IF ADD_STATUS ( )</Text>
+          <Connection IX="5">
+            <X F="Width*0.16891894">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="6">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="7">
+            <X F="Width*0.83108103">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+        </Shape>
+        <Shape ID="9" NameU="Rounded rectangle" Type="Shape" Master="0">
+          <XForm>
+            <PinX>3.03125</PinX>
+            <PinY>2.8958335</PinY>
+            <Width>2.364583</Width>
+            <Height>0.39583325</Height>
+            <LocPinX F="Inh">1.1822915</LocPinX>
+            <LocPinY F="Inh">0.19791663</LocPinY>
+            <Angle Unit="DEG" F="Inh">0</Angle>
+            <FlipX F="Inh">0</FlipX>
+            <FlipY F="Inh">0</FlipY>
+            <ResizeMode F="Inh">0</ResizeMode>
+          </XForm>
+          <Fill>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillBkgnd F="Inh">0</FillBkgnd>
+            <FillPattern F="Inh">1</FillPattern>
+            <ShdwForegnd F="Inh">0</ShdwForegnd>
+            <ShdwBkgnd F="Inh">1</ShdwBkgnd>
+            <FillForegndTrans F="Inh">0</FillForegndTrans>
+            <FillBkgndTrans F="Inh">0</FillBkgndTrans>
+            <ShdwForegndTrans F="Inh">0</ShdwForegndTrans>
+            <ShdwBkgndTrans F="Inh">0</ShdwBkgndTrans>
+          </Fill>
+          <Para IX="0">
+            <HorzAlign F="1">1</HorzAlign>
+          </Para>
+          <Scratch IX="0">
+            <X Unit="MM" F="Inh">0</X>
+          </Scratch>
+          <Connection IX="0">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*1">0</Y>
+            <DirX>0</DirX>
+            <DirY>-1</DirY>
+          </Connection>
+          <Connection IX="1">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Connection IX="2">
+            <X F="Width*0">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="3">
+            <X F="Width*1">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>-1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="4">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Control IX="0">
+            <X Unit="MM">0</X>
+            <Y F="Inh">0</Y>
+            <XDyn Unit="MM" F="Inh">0</XDyn>
+            <YDyn Unit="MM" F="Inh">0</YDyn>
+            <XCon F="Inh">2</XCon>
+            <YCon F="Inh">1</YCon>
+            <CanGlue F="Inh">0</CanGlue>
+            <Prompt F="Inh">Adjust Corner Rounding</Prompt>
+          </Control>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color>#000000</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.09099999</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>0</NoFill>
+            <MoveTo IX="1">
+              <X Unit="MM" F="Geometry1.X2-Scratch.X1">2.364583</X>
+              <Y F="Min(0,Height/2-Scratch.X1)">0</Y>
+            </MoveTo>
+            <ArcTo IX="2">
+              <X Unit="MM" F="Max(Width,Width/2+Scratch.X1)">2.364583</X>
+              <Y F="Geometry1.Y1+Scratch.X1">0</Y>
+              <A Unit="DL" F="Scratch.X1*0.29289">0</A>
+            </ArcTo>
+            <LineTo IX="3">
+              <X Unit="MM" F="Geometry1.X2">2.364583</X>
+              <Y Unit="MM" F="Geometry1.Y4-Scratch.X1">0.39583325</Y>
+            </LineTo>
+            <ArcTo IX="4">
+              <X Unit="MM" F="Geometry1.X1">2.364583</X>
+              <Y Unit="MM" F="Height-Geometry1.Y1">0.39583325</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="5">
+              <X Unit="MM" F="Geometry1.X6+Scratch.X1">0</X>
+              <Y Unit="MM" F="Geometry1.Y4">0.39583325</Y>
+            </LineTo>
+            <ArcTo IX="6">
+              <X Unit="MM" F="Width-Geometry1.X2">0</X>
+              <Y Unit="MM" F="Height-Geometry1.Y2">0.39583325</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="7">
+              <X Unit="MM" F="Geometry1.X6">0</X>
+              <Y F="Geometry1.Y2">0</Y>
+            </LineTo>
+            <ArcTo IX="8">
+              <X Unit="MM" F="Geometry1.X5">0</X>
+              <Y F="Geometry1.Y1">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="9">
+              <X Unit="MM" F="Geometry1.X1">2.364583</X>
+              <Y F="Geometry1.Y1">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>SELECT ( DSSMIADP . ACTN )</Text>
+          <Connection IX="5">
+            <X F="Width*0.072687134">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="6">
+            <X F="Width*0.9273128">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="7">
+            <X F="Width*0.2180616">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="8">
+            <X F="Width*0.7819384">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="9">
+            <X F="Width*0.64096916">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="10">
+            <X F="Width*0.25330397">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="11">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="12">
+            <X F="Width*0.35903084">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="13">
+            <X F="Width*0.74669605">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+        </Shape>
+        <Shape ID="10" NameU="Rounded rectangle" Type="Shape" Master="0">
+          <XForm>
+            <PinX>6.875</PinX>
+            <PinY>5.708333</PinY>
+            <Width>2.28125</Width>
+            <Height>0.3958335</Height>
+            <LocPinX F="Inh">1.140625</LocPinX>
+            <LocPinY F="Inh">0.19791675</LocPinY>
+            <Angle Unit="DEG" F="Inh">0</Angle>
+            <FlipX F="Inh">0</FlipX>
+            <FlipY F="Inh">0</FlipY>
+            <ResizeMode F="Inh">0</ResizeMode>
+          </XForm>
+          <Fill>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillBkgnd F="Inh">0</FillBkgnd>
+            <FillPattern F="Inh">1</FillPattern>
+            <ShdwForegnd F="Inh">0</ShdwForegnd>
+            <ShdwBkgnd F="Inh">1</ShdwBkgnd>
+            <FillForegndTrans F="Inh">0</FillForegndTrans>
+            <FillBkgndTrans F="Inh">0</FillBkgndTrans>
+            <ShdwForegndTrans F="Inh">0</ShdwForegndTrans>
+            <ShdwBkgndTrans F="Inh">0</ShdwBkgndTrans>
+          </Fill>
+          <Para IX="0">
+            <HorzAlign F="1">1</HorzAlign>
+          </Para>
+          <Scratch IX="0">
+            <X Unit="MM" F="Inh">0</X>
+          </Scratch>
+          <Connection IX="0">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*1">0</Y>
+            <DirX>0</DirX>
+            <DirY>-1</DirY>
+          </Connection>
+          <Connection IX="1">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Connection IX="2">
+            <X F="Width*0">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="3">
+            <X F="Width*1">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>-1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="4">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Control IX="0">
+            <X Unit="MM">0</X>
+            <Y F="Inh">0</Y>
+            <XDyn Unit="MM" F="Inh">0</XDyn>
+            <YDyn Unit="MM" F="Inh">0</YDyn>
+            <XCon F="Inh">2</XCon>
+            <YCon F="Inh">1</YCon>
+            <CanGlue F="Inh">0</CanGlue>
+            <Prompt F="Inh">Adjust Corner Rounding</Prompt>
+          </Control>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color>#000000</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.09099999</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>0</NoFill>
+            <MoveTo IX="1">
+              <X Unit="MM" F="Geometry1.X2-Scratch.X1">2.28125</X>
+              <Y F="Min(0,Height/2-Scratch.X1)">0</Y>
+            </MoveTo>
+            <ArcTo IX="2">
+              <X Unit="MM" F="Max(Width,Width/2+Scratch.X1)">2.28125</X>
+              <Y F="Geometry1.Y1+Scratch.X1">0</Y>
+              <A Unit="DL" F="Scratch.X1*0.29289">0</A>
+            </ArcTo>
+            <LineTo IX="3">
+              <X Unit="MM" F="Geometry1.X2">2.28125</X>
+              <Y Unit="MM" F="Geometry1.Y4-Scratch.X1">0.3958335</Y>
+            </LineTo>
+            <ArcTo IX="4">
+              <X Unit="MM" F="Geometry1.X1">2.28125</X>
+              <Y Unit="MM" F="Height-Geometry1.Y1">0.3958335</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="5">
+              <X Unit="MM" F="Geometry1.X6+Scratch.X1">0</X>
+              <Y Unit="MM" F="Geometry1.Y4">0.3958335</Y>
+            </LineTo>
+            <ArcTo IX="6">
+              <X Unit="MM" F="Width-Geometry1.X2">0</X>
+              <Y Unit="MM" F="Height-Geometry1.Y2">0.3958335</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="7">
+              <X Unit="MM" F="Geometry1.X6">0</X>
+              <Y F="Geometry1.Y2">0</Y>
+            </LineTo>
+            <ArcTo IX="8">
+              <X Unit="MM" F="Geometry1.X5">0</X>
+              <Y F="Geometry1.Y1">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="9">
+              <X Unit="MM" F="Geometry1.X1">2.28125</X>
+              <Y F="Geometry1.Y1">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>IF DSDRPCB . STATCD = 'GE'</Text>
+          <Connection IX="5">
+            <X F="Width*0.83333325">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="6">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="7">
+            <X F="Width*0.16666673">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+        </Shape>
+        <Shape ID="11" NameU="Rounded rectangle" Type="Shape" Master="0">
+          <XForm>
+            <PinX>6.875</PinX>
+            <PinY>4.8125</PinY>
+            <Width>6.28125</Width>
+            <Height>0.39583302</Height>
+            <LocPinX F="Inh">3.140625</LocPinX>
+            <LocPinY F="Inh">0.19791651</LocPinY>
+            <Angle Unit="DEG" F="Inh">0</Angle>
+            <FlipX F="Inh">0</FlipX>
+            <FlipY F="Inh">0</FlipY>
+            <ResizeMode F="Inh">0</ResizeMode>
+          </XForm>
+          <Fill>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillBkgnd F="Inh">0</FillBkgnd>
+            <FillPattern F="Inh">1</FillPattern>
+            <ShdwForegnd F="Inh">0</ShdwForegnd>
+            <ShdwBkgnd F="Inh">1</ShdwBkgnd>
+            <FillForegndTrans F="Inh">0</FillForegndTrans>
+            <FillBkgndTrans F="Inh">0</FillBkgndTrans>
+            <ShdwForegndTrans F="Inh">0</ShdwForegndTrans>
+            <ShdwBkgndTrans F="Inh">0</ShdwBkgndTrans>
+          </Fill>
+          <Para IX="0">
+            <HorzAlign F="1">1</HorzAlign>
+          </Para>
+          <Scratch IX="0">
+            <X Unit="MM" F="Inh">0</X>
+          </Scratch>
+          <Connection IX="0">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*1">0</Y>
+            <DirX>0</DirX>
+            <DirY>-1</DirY>
+          </Connection>
+          <Connection IX="1">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Connection IX="2">
+            <X F="Width*0">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="3">
+            <X F="Width*1">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>-1</DirX>
+            <DirY>0</DirY>
+          </Connection>
+          <Connection IX="4">
+            <X F="Width*0.5">0</X>
+            <Y F="Height*0.5">0</Y>
+            <DirX>0</DirX>
+            <DirY>1</DirY>
+          </Connection>
+          <Control IX="0">
+            <X Unit="MM">0</X>
+            <Y F="Inh">0</Y>
+            <XDyn Unit="MM" F="Inh">0</XDyn>
+            <YDyn Unit="MM" F="Inh">0</YDyn>
+            <XCon F="Inh">2</XCon>
+            <YCon F="Inh">1</YCon>
+            <CanGlue F="Inh">0</CanGlue>
+            <Prompt F="Inh">Adjust Corner Rounding</Prompt>
+          </Control>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color>#000000</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.09099999</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>0</NoFill>
+            <MoveTo IX="1">
+              <X Unit="MM" F="Geometry1.X2-Scratch.X1">6.28125</X>
+              <Y F="Min(0,Height/2-Scratch.X1)">0</Y>
+            </MoveTo>
+            <ArcTo IX="2">
+              <X Unit="MM" F="Max(Width,Width/2+Scratch.X1)">6.28125</X>
+              <Y F="Geometry1.Y1+Scratch.X1">0</Y>
+              <A Unit="DL" F="Scratch.X1*0.29289">0</A>
+            </ArcTo>
+            <LineTo IX="3">
+              <X Unit="MM" F="Geometry1.X2">6.28125</X>
+              <Y Unit="MM" F="Geometry1.Y4-Scratch.X1">0.39583302</Y>
+            </LineTo>
+            <ArcTo IX="4">
+              <X Unit="MM" F="Geometry1.X1">6.28125</X>
+              <Y Unit="MM" F="Height-Geometry1.Y1">0.39583302</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="5">
+              <X Unit="MM" F="Geometry1.X6+Scratch.X1">0</X>
+              <Y Unit="MM" F="Geometry1.Y4">0.39583302</Y>
+            </LineTo>
+            <ArcTo IX="6">
+              <X Unit="MM" F="Width-Geometry1.X2">0</X>
+              <Y Unit="MM" F="Height-Geometry1.Y2">0.39583302</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="7">
+              <X Unit="MM" F="Geometry1.X6">0</X>
+              <Y F="Geometry1.Y2">0</Y>
+            </LineTo>
+            <ArcTo IX="8">
+              <X Unit="MM" F="Geometry1.X5">0</X>
+              <Y F="Geometry1.Y1">0</Y>
+              <A Unit="DL" F="Geometry1.A2">0</A>
+            </ArcTo>
+            <LineTo IX="9">
+              <X Unit="MM" F="Geometry1.X1">6.28125</X>
+              <Y F="Geometry1.Y1">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>IF DSDRPCB . STATCD = 'GA' | DSDRPCB . STATCD = 'GE' | DSDRPCB . STATCD = 'GK'</Text>
+          <Connection IX="5">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*0">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+          <Connection IX="6">
+            <X F="Width*0.5">1</X>
+            <Y F="Height*1">1</Y>
+            <AutoGen>1</AutoGen>
+          </Connection>
+        </Shape>
+        <Shape ID="12" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">12.864583</PinX>
+            <PinY F="(BeginY+EndY)/2">0.65625</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">0</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.5</Height>
+            <LocPinX F="Width*0.5">0</LocPinX>
+            <LocPinY F="Height*0.5">0.25</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle!Connections.X6,Rounded rectangle!Connections.Y6))">12.864583</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle!Connections.X6,Rounded rectangle!Connections.Y6))">0.90625</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.2!Connections.X6,Rounded rectangle.2!Connections.Y6))">12.864583</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.2!Connections.X6,Rounded rectangle.2!Connections.Y6))">0.40625</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0.5</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="If(BeginX &lt;= EndX,Width,0)">0</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>WHILE ( IO_PCB . STATCD = ' ' )</Text>
+        </Shape>
+        <Shape ID="13" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">14.161458</PinX>
+            <PinY F="(BeginY+EndY)/2">2.5104167</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">0.90625</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">2.4166665</Height>
+            <LocPinX F="Width*0.5">0.453125</LocPinX>
+            <LocPinY F="Height*0.5">1.2083332538604736</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle!Connections.X7,Rounded rectangle!Connections.Y7))">13.708333</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle!Connections.X7,Rounded rectangle!Connections.Y7))">1.3020835</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.3!Connections.X6,Rounded rectangle.3!Connections.Y6))">14.614583</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.3!Connections.X6,Rounded rectangle.3!Connections.Y6))">3.71875</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>1</BeginArrow>
+            <EndArrow>0</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*0,Width*1)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*0,Height*1)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &gt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &gt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.10344828,Height*0.8965517)">0.24999999</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">0.90625</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.10344828,Height*0.8965517)">0.24999999</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">0.90625</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">2.4166665</Y>
+            </LineTo>
+          </Geom>
+          <Text>I_AM_DEAD</Text>
+        </Shape>
+        <Shape ID="14" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">13.78125</PinX>
+            <PinY F="(BeginY+EndY)/2">2.5104167</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">0.83333397</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">2.4166665</Height>
+            <LocPinX F="Width*0.5">0.41666698455810547</LocPinX>
+            <LocPinY F="Height*0.5">1.2083332538604736</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle!Connections.X8,Rounded rectangle!Connections.Y8))">13.364583</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle!Connections.X8,Rounded rectangle!Connections.Y8))">1.3020835</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.3!Connections.X7,Rounded rectangle.3!Connections.Y7))">14.197917</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.3!Connections.X7,Rounded rectangle.3!Connections.Y7))">3.71875</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>1</BeginArrow>
+            <EndArrow>0</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*0,Width*1)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*0,Height*1)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &gt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &gt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.15517242,Height*0.8448276)">0.375</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">0.83333397</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.15517242,Height*0.8448276)">0.375</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">0.83333397</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">2.4166665</Y>
+            </LineTo>
+          </Geom>
+          <Text>I_AM_DEAD IS FALSE</Text>
+        </Shape>
+        <Shape ID="15" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">12.859375</PinX>
+            <PinY F="(BeginY+EndY)/2">2.9583335</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">0.34375</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">3.3125</Height>
+            <LocPinX F="Width*0.5">0.171875</LocPinX>
+            <LocPinY F="Height*0.5">1.65625</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.4!Connections.X6,Rounded rectangle.4!Connections.Y6))">12.6875</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.4!Connections.X6,Rounded rectangle.4!Connections.Y6))">4.6145835</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle!Connections.X9,Rounded rectangle!Connections.Y9))">13.03125</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle!Connections.X9,Rounded rectangle!Connections.Y9))">1.3020835</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">3.3125</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.03773582,Height*0.9622642)">3.1875</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">0.34375</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.03773582,Height*0.9622642)">3.1875</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">0.34375</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>EDITS_OK ( ) &amp; LNUM_NACD_VALID ( ) &amp; STATUS_VALID ( ) IS FALSE</Text>
+        </Shape>
+        <Shape ID="16" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">8.338541</PinX>
+            <PinY F="(BeginY+EndY)/2">1.5520834</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">8.052083</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.5</Height>
+            <LocPinX F="Width*0.5">4.026041507720947</LocPinX>
+            <LocPinY F="Height*0.5">0.25</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.5!Connections.X6,Rounded rectangle.5!Connections.Y6))">4.3124995</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.5!Connections.X6,Rounded rectangle.5!Connections.Y6))">1.8020834</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle!Connections.X10,Rounded rectangle!Connections.Y10))">12.364582</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle!Connections.X10,Rounded rectangle!Connections.Y10))">1.3020834</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0.5</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.25,Height*0.75)">0.375</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">8.052083</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.25,Height*0.75)">0.375</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">8.052083</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>DELETE_STATUS ( ) IS FALSE</Text>
+        </Shape>
+        <Shape ID="17" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">11.989584</PinX>
+            <PinY F="(BeginY+EndY)/2">2.5104167</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">1.416667</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">2.4166665</Height>
+            <LocPinX F="Width*0.5">0.7083334922790527</LocPinX>
+            <LocPinY F="Height*0.5">1.2083332538604736</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.6!Connections.X6,Rounded rectangle.6!Connections.Y6))">11.28125</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.6!Connections.X6,Rounded rectangle.6!Connections.Y6))">3.71875</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle!Connections.X11,Rounded rectangle!Connections.Y11))">12.697918</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle!Connections.X11,Rounded rectangle!Connections.Y11))">1.3020835</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">2.4166665</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.4741379,Height*0.5258621)">1.2708334</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">1.416667</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.4741379,Height*0.5258621)">1.2708334</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">1.416667</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>PURGE_STATUS ( ) IS FALSE</Text>
+        </Shape>
+        <Shape ID="18" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">6.8854165</PinX>
+            <PinY F="(BeginY+EndY)/2">1.5520834</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">10.270833</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.5</Height>
+            <LocPinX F="Width*0.5">5.135416507720947</LocPinX>
+            <LocPinY F="Height*0.5">0.25</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.7!Connections.X6,Rounded rectangle.7!Connections.Y6))">1.75</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.7!Connections.X6,Rounded rectangle.7!Connections.Y6))">1.8020834</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle!Connections.X12,Rounded rectangle!Connections.Y12))">12.020833</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle!Connections.X12,Rounded rectangle!Connections.Y12))">1.3020834</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0.5</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.5,Height*0.5)">0.25</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">10.270833</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.5,Height*0.5)">0.25</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">10.270833</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>QUERY_STATUS ( )</Text>
+        </Shape>
+        <Shape ID="19" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">5.973958</PinX>
+            <PinY F="(BeginY+EndY)/2">2.5104167</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">11.40625</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">2.4166665</Height>
+            <LocPinX F="Width*0.5">5.703125</LocPinX>
+            <LocPinY F="Height*0.5">1.2083332538604736</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.8!Connections.X6,Rounded rectangle.8!Connections.Y6))">0.27083302</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.8!Connections.X6,Rounded rectangle.8!Connections.Y6))">3.71875</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle!Connections.X13,Rounded rectangle!Connections.Y13))">11.677083</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle!Connections.X13,Rounded rectangle!Connections.Y13))">1.3020835</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">2.4166665</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.94827586,Height*0.051724136)">0.124999985</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">11.40625</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.94827586,Height*0.051724136)">0.124999985</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">11.40625</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>ADD_STATUS ( ) IS FALSE</Text>
+        </Shape>
+        <Shape ID="20" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">1.4010416</PinX>
+            <PinY F="(BeginY+EndY)/2">3.40625</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">1.2395833</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.625</Height>
+            <LocPinX F="Width*0.5">0.6197916269302368</LocPinX>
+            <LocPinY F="Height*0.5">0.3125</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.8!Connections.X7,Rounded rectangle.8!Connections.Y7))">0.78125</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.8!Connections.X7,Rounded rectangle.8!Connections.Y7))">3.71875</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.9!Connections.X6,Rounded rectangle.9!Connections.Y6))">2.0208333</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.9!Connections.X6,Rounded rectangle.9!Connections.Y6))">3.09375</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>1</BeginArrow>
+            <EndArrow>0</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*0,Width*1)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*0,Height*1)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &gt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &gt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0.625</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.39999998,Height*0.6)">0.375</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">1.2395833</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.39999998,Height*0.6)">0.375</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">1.2395833</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>WHEN ( 'A' )</Text>
+        </Shape>
+        <Shape ID="21" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">8.911458</PinX>
+            <PinY F="(BeginY+EndY)/2">3.40625</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">9.739584</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.625</Height>
+            <LocPinX F="Width*0.5">4.8697919845581055</LocPinX>
+            <LocPinY F="Height*0.5">0.3125</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.9!Connections.X7,Rounded rectangle.9!Connections.Y7))">4.041666</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.9!Connections.X7,Rounded rectangle.9!Connections.Y7))">3.09375</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.3!Connections.X8,Rounded rectangle.3!Connections.Y8))">13.78125</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.3!Connections.X8,Rounded rectangle.3!Connections.Y8))">3.71875</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>1</BeginArrow>
+            <EndArrow>0</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*0,Width*1)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*0,Height*1)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &gt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &gt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.2,Height*0.8)">0.125</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">9.739584</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.2,Height*0.8)">0.125</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">9.739584</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0.625</Y>
+            </LineTo>
+          </Geom>
+          <Text>I_AM_DEAD IS FALSE</Text>
+        </Shape>
+        <Shape ID="22" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">1.828125</PinX>
+            <PinY F="(BeginY+EndY)/2">3.40625</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">1.0729166</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.625</Height>
+            <LocPinX F="Width*0.5">0.5364583134651184</LocPinX>
+            <LocPinY F="Height*0.5">0.3125</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.8!Connections.X8,Rounded rectangle.8!Connections.Y8))">1.2916667</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.8!Connections.X8,Rounded rectangle.8!Connections.Y8))">3.71875</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.9!Connections.X8,Rounded rectangle.9!Connections.Y8))">2.3645833</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.9!Connections.X8,Rounded rectangle.9!Connections.Y8))">3.09375</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0.625</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.19999999,Height*0.8)">0.5</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">1.0729166</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.19999999,Height*0.8)">0.5</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">1.0729166</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>ADD_STATUS ( ) IS FALSE</Text>
+        </Shape>
+        <Shape ID="23" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">7.2708335</PinX>
+            <PinY F="(BeginY+EndY)/2">3.40625</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">7.145833</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.625</Height>
+            <LocPinX F="Width*0.5">3.5729165077209473</LocPinX>
+            <LocPinY F="Height*0.5">0.3125</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.9!Connections.X9,Rounded rectangle.9!Connections.Y9))">3.697917</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.9!Connections.X9,Rounded rectangle.9!Connections.Y9))">3.09375</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.6!Connections.X7,Rounded rectangle.6!Connections.Y7))">10.84375</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.6!Connections.X7,Rounded rectangle.6!Connections.Y7))">3.71875</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>1</BeginArrow>
+            <EndArrow>0</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*0,Width*1)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*0,Height*1)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &gt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &gt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.4,Height*0.6)">0.25</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">7.145833</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.4,Height*0.6)">0.25</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">7.145833</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0.625</Y>
+            </LineTo>
+          </Geom>
+          <Text>PURGE_STATUS ( ) IS FALSE</Text>
+        </Shape>
+        <Shape ID="24" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">6.8854165</PinX>
+            <PinY F="(BeginY+EndY)/2">3.40625</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">7.041667</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.625</Height>
+            <LocPinX F="Width*0.5">3.5208334922790527</LocPinX>
+            <LocPinY F="Height*0.5">0.3125</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.9!Connections.X10,Rounded rectangle.9!Connections.Y10))">3.364583</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.9!Connections.X10,Rounded rectangle.9!Connections.Y10))">3.09375</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.6!Connections.X8,Rounded rectangle.6!Connections.Y8))">10.40625</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.6!Connections.X8,Rounded rectangle.6!Connections.Y8))">3.71875</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>1</BeginArrow>
+            <EndArrow>0</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*0,Width*1)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*0,Height*1)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &gt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &gt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.6,Height*0.39999998)">0.375</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">7.041667</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.6,Height*0.39999998)">0.375</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">7.041667</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0.625</Y>
+            </LineTo>
+          </Geom>
+          <Text>PURGE_STATUS ( )</Text>
+        </Shape>
+        <Shape ID="25" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">2.0989585</PinX>
+            <PinY F="(BeginY+EndY)/2">2.4479167</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">0.69791675</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.5</Height>
+            <LocPinX F="Width*0.5">0.3489583730697632</LocPinX>
+            <LocPinY F="Height*0.5">0.25</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.7!Connections.X7,Rounded rectangle.7!Connections.Y7))">1.7500001</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.7!Connections.X7,Rounded rectangle.7!Connections.Y7))">2.1979167</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.9!Connections.X11,Rounded rectangle.9!Connections.Y11))">2.447917</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.9!Connections.X11,Rounded rectangle.9!Connections.Y11))">2.6979167</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>1</BeginArrow>
+            <EndArrow>0</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*0,Width*1)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*0,Height*1)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &gt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &gt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.75,Height*0.25)">0.375</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">0.69791675</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.75,Height*0.25)">0.375</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">0.69791675</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0.5</Y>
+            </LineTo>
+          </Geom>
+          <Text>WHEN ( 'Q' )</Text>
+        </Shape>
+        <Shape ID="26" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">9.348958</PinX>
+            <PinY F="(BeginY+EndY)/2">4.8125</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">3.4270835</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">1.395833</Height>
+            <LocPinX F="Width*0.5">1.7135417461395264</LocPinX>
+            <LocPinY F="Height*0.5">0.6979165077209473</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.10!Connections.X6,Rounded rectangle.10!Connections.Y6))">7.635416</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.10!Connections.X6,Rounded rectangle.10!Connections.Y6))">5.5104165</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.6!Connections.X9,Rounded rectangle.6!Connections.Y9))">11.0625</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.6!Connections.X9,Rounded rectangle.6!Connections.Y9))">4.1145835</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">1.395833</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.08955228,Height*0.9104477)">1.270833</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">3.4270835</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.08955228,Height*0.9104477)">1.270833</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">3.4270835</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>DSDRPCB . STATCD = 'GE'</Text>
+        </Shape>
+        <Shape ID="27" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">8.53125</PinX>
+            <PinY F="(BeginY+EndY)/2">4.3645835</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">3.3125</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.5</Height>
+            <LocPinX F="Width*0.5">1.65625</LocPinX>
+            <LocPinY F="Height*0.5">0.25</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.11!Connections.X6,Rounded rectangle.11!Connections.Y6))">6.875</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.11!Connections.X6,Rounded rectangle.11!Connections.Y6))">4.6145835</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.6!Connections.X10,Rounded rectangle.6!Connections.Y10))">10.1875</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.6!Connections.X10,Rounded rectangle.6!Connections.Y10))">4.1145835</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0.5</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.25,Height*0.75)">0.375</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">3.3125</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.25,Height*0.75)">0.375</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">3.3125</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>DSDRPCB . STATCD = 'GA' | DSDRPCB . STATCD = 'GE' | DSDRPCB . STATCD = 'GK'</Text>
+        </Shape>
+        <Shape ID="28" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">6.5</PinX>
+            <PinY F="(BeginY+EndY)/2">3.40625</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">6.9375</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.625</Height>
+            <LocPinX F="Width*0.5">3.46875</LocPinX>
+            <LocPinY F="Height*0.5">0.3125</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.9!Connections.X12,Rounded rectangle.9!Connections.Y12))">3.03125</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.9!Connections.X12,Rounded rectangle.9!Connections.Y12))">3.09375</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.6!Connections.X11,Rounded rectangle.6!Connections.Y11))">9.96875</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.6!Connections.X11,Rounded rectangle.6!Connections.Y11))">3.71875</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.8,Height*0.19999999)">0.5</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">6.9375</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.8,Height*0.19999999)">0.5</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">6.9375</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0.625</Y>
+            </LineTo>
+          </Geom>
+          <Text>WHEN ( 'P' )</Text>
+        </Shape>
+        <Shape ID="29" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">6.875</PinX>
+            <PinY F="(BeginY+EndY)/2">5.2604165</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">0</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.5</Height>
+            <LocPinX F="Width*0.5">0</LocPinX>
+            <LocPinY F="Height*0.5">0.25</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.10!Connections.X7,Rounded rectangle.10!Connections.Y7))">6.875</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.10!Connections.X7,Rounded rectangle.10!Connections.Y7))">5.5104165</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.11!Connections.X7,Rounded rectangle.11!Connections.Y7))">6.875</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.11!Connections.X7,Rounded rectangle.11!Connections.Y7))">5.0104165</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0.5</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="If(BeginX &lt;= EndX,Width,0)">0</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>DSDRPCB . STATCD = 'GE' IS FALSE</Text>
+        </Shape>
+        <Shape ID="30" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">4.40625</PinX>
+            <PinY F="(BeginY+EndY)/2">4.302083</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">3.4166667</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">2.4166665</Height>
+            <LocPinX F="Width*0.5">1.7083333730697632</LocPinX>
+            <LocPinY F="Height*0.5">1.2083332538604736</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.9!Connections.X13,Rounded rectangle.9!Connections.Y13))">2.6979165</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.9!Connections.X13,Rounded rectangle.9!Connections.Y13))">3.0937498</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.10!Connections.X8,Rounded rectangle.10!Connections.Y8))">6.1145835</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.10!Connections.X8,Rounded rectangle.10!Connections.Y8))">5.510416</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.94827586,Height*0.051724136)">2.2916665</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">3.4166667</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.94827586,Height*0.051724136)">2.2916665</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">3.4166667</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">2.4166665</Y>
+            </LineTo>
+          </Geom>
+          <Text>WHEN ( 'P' )</Text>
+        </Shape>
+        <Shape ID="31" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">3.9635415</PinX>
+            <PinY F="(BeginY+EndY)/2">2.4479167</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">0.69791675</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.5</Height>
+            <LocPinX F="Width*0.5">0.3489583730697632</LocPinX>
+            <LocPinY F="Height*0.5">0.25</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.9!Connections.X14,Rounded rectangle.9!Connections.Y14))">3.614583</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.9!Connections.X14,Rounded rectangle.9!Connections.Y14))">2.6979167</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.5!Connections.X7,Rounded rectangle.5!Connections.Y7))">4.3125</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.5!Connections.X7,Rounded rectangle.5!Connections.Y7))">2.1979167</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0.5</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.25,Height*0.75)">0.375</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">0.69791675</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.25,Height*0.75)">0.375</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">0.69791675</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>WHEN ( 'D' )</Text>
+        </Shape>
+        <Shape ID="32" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">14.880208</PinX>
+            <PinY F="(BeginY+EndY)/2">2.9583335</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">1.65625</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">3.3125</Height>
+            <LocPinX F="Width*0.5">0.828125</LocPinX>
+            <LocPinY F="Height*0.5">1.65625</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle!Connections.X14,Rounded rectangle!Connections.Y14))">14.052083</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle!Connections.X14,Rounded rectangle!Connections.Y14))">1.3020835</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.4!Connections.X7,Rounded rectangle.4!Connections.Y7))">15.708333</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.4!Connections.X7,Rounded rectangle.4!Connections.Y7))">4.6145835</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="IF(BeginX &lt;= EndX,Width*0,Width*1)">0</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.03773585,Height*0.9622642)">0.125</Y>
+            </LineTo>
+            <LineTo IX="3">
+              <X F="IF(BeginX &lt;= EndX,Width*1,Width*0)">1.65625</X>
+              <Y F="IF(BeginY &lt;= EndY,Height*0.03773585,Height*0.9622642)">0.125</Y>
+            </LineTo>
+            <LineTo IX="4">
+              <X F="If(BeginX &lt;= EndX,Width,0)">1.65625</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">3.3125</Y>
+            </LineTo>
+          </Geom>
+          <Text>WHILE ( IO_PCB . STATCD = ' ' )</Text>
+        </Shape>
+        <Shape ID="33" Type="Shape">
+          <XForm>
+            <PinX F="(BeginX+EndX)/2">14.197917</PinX>
+            <PinY F="(BeginY+EndY)/2">4.3645835</PinY>
+            <Width F="Guard(Abs(EndX-BeginX))">0</Width>
+            <Height F="Guard(Abs(EndY-BeginY))">0.5</Height>
+            <LocPinX F="Width*0.5">0</LocPinX>
+            <LocPinY F="Height*0.5">0.25</LocPinY>
+            <Angle Unit="DEG" F="Guard(0DEG)">0</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <ResizeMode>0</ResizeMode>
+          </XForm>
+          <XForm1D>
+            <BeginX F="Par(Pnt(Rounded rectangle.4!Connections.X8,Rounded rectangle.4!Connections.Y8))">14.197917</BeginX>
+            <BeginY F="Par(Pnt(Rounded rectangle.4!Connections.X8,Rounded rectangle.4!Connections.Y8))">4.6145835</BeginY>
+            <EndX F="Par(Pnt(Rounded rectangle.3!Connections.X9,Rounded rectangle.3!Connections.Y9))">14.197917</EndX>
+            <EndY F="Par(Pnt(Rounded rectangle.3!Connections.X9,Rounded rectangle.3!Connections.Y9))">4.1145835</EndY>
+          </XForm1D>
+          <Line>
+            <LineWeight F="Inh">0.01</LineWeight>
+            <LineColor>#000000</LineColor>
+            <LinePattern F="Inh">1</LinePattern>
+            <Rounding Unit="MM">0.04</Rounding>
+            <EndArrowSize F="Inh">2</EndArrowSize>
+            <BeginArrow>0</BeginArrow>
+            <EndArrow>1</EndArrow>
+            <LineCap F="Inh">0</LineCap>
+            <BeginArrowSize F="Inh">2</BeginArrowSize>
+            <LineColorTrans F="Inh">0</LineColorTrans>
+          </Line>
+          <TextXForm>
+            <TxtPinX F="If(BeginX &lt; EndX,Width*1,Width*0)">0</TxtPinX>
+            <TxtPinY F="If(BeginY &lt; EndY,Height*1,Height*0)">0</TxtPinY>
+            <TxtWidth F="TextWidth(TheText)">0.9</TxtWidth>
+            <TxtHeight F="Guard(TextHeight(TheText,Width))">0.1</TxtHeight>
+            <TxtLocPinX F="If(BeginX &lt; EndX,TxtWidth+0.05,-0.05)">-0.05</TxtLocPinX>
+            <TxtLocPinY F="If(BeginY &lt; EndY,TxtHeight+0.05,-0.05)">-0.05</TxtLocPinY>
+            <TxtAngle Unit="DEG" F="If(Angle &lt; 0,Abs(Angle),-Abs(Angle))">0</TxtAngle>
+          </TextXForm>
+          <Char IX="0">
+            <Font>0</Font>
+            <Color F="Inh">0</Color>
+            <Style>0</Style>
+            <Case F="Inh">0</Case>
+            <Pos F="Inh">0</Pos>
+            <FontScale F="Inh">1</FontScale>
+            <Locale F="Inh">0</Locale>
+            <Size Unit="PT">0.0682499925</Size>
+            <DblUnderline F="Inh">0</DblUnderline>
+            <Overline F="Inh">0</Overline>
+            <Strikethru F="Inh">0</Strikethru>
+            <Perpendicular F="Inh">0</Perpendicular>
+            <Letterspace F="Inh">0</Letterspace>
+            <ColorTrans F="Inh">0</ColorTrans>
+          </Char>
+          <Geom IX="0">
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX="1">
+              <X F="If(BeginX &lt;= EndX,0,Width)">0</X>
+              <Y F="If(BeginY &lt;= EndY,0,Height)">0.5</Y>
+            </MoveTo>
+            <LineTo IX="2">
+              <X F="If(BeginX &lt;= EndX,Width,0)">0</X>
+              <Y F="If(BeginY &lt;= EndY,Height,0)">0</Y>
+            </LineTo>
+          </Geom>
+          <Text>EDITS_OK ( ) &amp; LNUM_NACD_VALID ( ) &amp; STATUS_VALID ( )</Text>
+        </Shape>
+      </Shapes>
+    </Page>
+  </Pages>
+  <Windows>
+  </Windows>
+  <EventList>
+  </EventList>
+</VisioDocument>
