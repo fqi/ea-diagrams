@@ -1,0 +1,2287 @@
+<html><head>
+  <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta charset="UTF-8">
+  <style type="text/css">
+        body        {font-family: Arial; font-size: 10pt}
+        table       {font-family: Arial; font-size: 10pt; border-collapse: collapse; border: 1px solid black}
+        th          {background-color: #C0C0C0; border-collapse: collapse; border: 1px solid black}     
+        td          {vertical-align: top; border-collapse: collapse; border: 1px solid black}
+        span.header {font-weight: bold; font-size: 14pt; line-height: 2.5em}
+        span.date   {font-size: 8pt; line-height: 2em}
+		br 			{mso-data-placement:same-cell;}		
+    </style><script>
+        var europeandate = true;
+        var alternate_row_colors = true;
+        
+        addEvent(window, "load", sortables_init);
+
+        var SORT_COLUMN_INDEX;
+        var thead = false;
+        
+        function sortables_init() {
+        	// Find all tables with class sortable and make them sortable
+        	if (!document.getElementsByTagName) return;
+        	tbls = document.getElementsByTagName("table");
+        	for (ti=0;ti<tbls.length;ti++) {
+        		thisTbl = tbls[ti];
+        		if (((' '+thisTbl.className+' ').indexOf("sortable") != -1) && (thisTbl.id)) {
+        			ts_makeSortable(thisTbl);
+        		}
+        	}
+        }
+        
+        function ts_makeSortable(t) {
+        	if (t.rows && t.rows.length > 0) {
+        		if (t.tHead && t.tHead.rows.length > 0) {
+        			var firstRow = t.tHead.rows[t.tHead.rows.length-1];
+        			thead = true;
+        		} else {
+        			var firstRow = t.rows[0];
+        		}
+        	}
+        	if (!firstRow) return;
+        	
+        	// We have a first row: assume it's the header, and make its contents clickable links
+        	for (var i=0;i<firstRow.cells.length;i++) {
+        		var cell = firstRow.cells[i];
+        		var txt = ts_getInnerText(cell);
+        		if (cell.className != "unsortable" && cell.className.indexOf("unsortable") == -1) {
+        			cell.innerHTML = '<a href="#" class="sortheader" onclick="ts_resortTable(this, '+i+');return false;">'+txt+'<span class="sortarrow">&nbsp;</span></a>';
+        		}
+        	}
+        	if (alternate_row_colors) {
+        		alternate(t);
+        	}
+        }
+        
+        function ts_getInnerText(el) {
+        	if (typeof el == "string") return el;
+        	if (typeof el == "undefined") { return el };
+        	if (el.innerText) return el.innerText;	//Not needed but it is faster
+        	var str = "";
+        	
+        	var cs = el.childNodes;
+        	var l = cs.length;
+        	for (var i = 0; i < l; i++) {
+        		switch (cs[i].nodeType) {
+        			case 1: //ELEMENT_NODE
+        				str += ts_getInnerText(cs[i]);
+        				break;
+        			case 3:	//TEXT_NODE
+        				str += cs[i].nodeValue;
+        				break;
+        		}
+        	}
+        	return str;
+        }
+        
+        function ts_resortTable(lnk, clid) {
+        	var span;
+        	for (var ci=0;ci<lnk.childNodes.length;ci++) {
+        		if (lnk.childNodes[ci].tagName && lnk.childNodes[ci].tagName.toLowerCase() == 'span') span = lnk.childNodes[ci];
+        	}
+        	var spantext = ts_getInnerText(span);
+        	var td = lnk.parentNode;
+        	var column = clid || td.cellIndex;
+        	var t = getParent(td,'TABLE');
+        	// Work out a type for the column
+        	if (t.rows.length <= 1) return;
+        	var itm = "";
+        	var i = 0;
+        	var txtvalue;
+        	while (i < t.tBodies[0].rows.length) {
+				var txtvalue = trim(ts_getInnerText(t.tBodies[0].rows[i].cells[column]));
+				if (txtvalue.substr(0,4) != "<!--" && txtvalue.length > 0) {
+					var itm = txtvalue;	
+				}
+				i++;
+        	}
+        	if (itm == "") return; 
+        	sortfn = ts_sort_caseinsensitive;
+        	if (itm.match(/^\d\d[\/\.-][a-zA-z][a-zA-Z][a-zA-Z][\/\.-]\d\d\d\d$/)) sortfn = ts_sort_date;
+        	if (itm.match(/^\d\d[\/\.-]\d\d[\/\.-]\d\d\d{2}?$/)) sortfn = ts_sort_date;
+        	if (itm.match(/^-?[?$????]\d/)) sortfn = ts_sort_numeric;
+        	if (itm.match(/^-?(\d+[,\.\s]?)+(E[-+][\d]+)?%?$/)) sortfn = ts_sort_numeric;
+        	SORT_COLUMN_INDEX = column;
+        	var firstRow = new Array();
+        	var newRows = new Array();
+        	for (k=0;k<t.tBodies.length;k++) {
+        		for (i=0;i<t.tBodies[k].rows[0].length;i++) {
+        			firstRow[i] = t.tBodies[k].rows[0][i];
+        		}
+        	}
+        	for (k=0;k<t.tBodies.length;k++) {
+        		if (!thead) {
+        			// Skip the first row
+        			for (j=1;j<t.tBodies[k].rows.length;j++) {
+        				newRows[j-1] = t.tBodies[k].rows[j];
+        			}
+        		} else {
+        			// Do NOT skip the first row
+        			for (j=0;j<t.tBodies[k].rows.length;j++) {
+        				newRows[j] = t.tBodies[k].rows[j];
+        			}
+        		}
+        	}
+        	newRows.sort(sortfn);
+        	if (span.getAttribute("sortdir") == 'down') {
+        			ARROW = '&nbsp;&darr;';
+        			newRows.reverse();
+        			span.setAttribute('sortdir','up');
+        	} else {
+        			ARROW = '&nbsp;&uarr;';
+        			span.setAttribute('sortdir','down');
+        	}
+            // We appendChild rows that already exist to the tbody, so it moves them rather than creating new ones
+            // don't do sortbottom rows
+            for (i=0; i<newRows.length; i++) {
+        		if (!newRows[i].className || (newRows[i].className && (newRows[i].className.indexOf('sortbottom') == -1))) {
+        			t.tBodies[0].appendChild(newRows[i]);
+        		}
+        	}
+            // do sortbottom rows only
+            for (i=0; i<newRows.length; i++) {
+        		if (newRows[i].className && (newRows[i].className.indexOf('sortbottom') != -1))
+        			t.tBodies[0].appendChild(newRows[i]);
+        	}
+        	// Delete any other arrows there may be showing
+        	var allspans = document.getElementsByTagName("span");
+        	for (var ci=0;ci<allspans.length;ci++) {
+        		if (allspans[ci].className == 'sortarrow') {
+        			if (getParent(allspans[ci],"table") == getParent(lnk,"table")) { // in the same table as us?
+        				allspans[ci].innerHTML = '&nbsp;';
+        			}
+        		}
+        	}
+        	span.innerHTML = ARROW;
+        	alternate(t);
+        }
+        
+        function getParent(el, pTagName) {
+        	if (el == null) {
+        		return null;
+        	} else if (el.nodeType == 1 && el.tagName.toLowerCase() == pTagName.toLowerCase()) {
+        		return el;
+        	} else {
+        		return getParent(el.parentNode, pTagName);
+        	}
+        }
+        
+        function sort_date(date) {	
+        	// y2k notes: two digit years less than 50 are treated as 20XX, greater than 50 are treated as 19XX
+        	dt = "00000000";
+        	if (date.length == 11) {
+        		mtstr = date.substr(3,3);
+        		mtstr = mtstr.toLowerCase();
+        		switch(mtstr) {
+        			case "jan": var mt = "01"; break;
+        			case "feb": var mt = "02"; break;
+        			case "mar": var mt = "03"; break;
+        			case "apr": var mt = "04"; break;
+        			case "may": var mt = "05"; break;
+        			case "jun": var mt = "06"; break;
+        			case "jul": var mt = "07"; break;
+        			case "aug": var mt = "08"; break;
+        			case "sep": var mt = "09"; break;
+        			case "oct": var mt = "10"; break;
+        			case "nov": var mt = "11"; break;
+        			case "dec": var mt = "12"; break;
+        			// default: var mt = "00";
+        		}
+        		dt = date.substr(7,4)+mt+date.substr(0,2);
+        		return dt;
+        	} else if (date.length == 10) {
+        		if (europeandate == false) {
+        			dt = date.substr(6,4)+date.substr(0,2)+date.substr(3,2);
+        			return dt;
+        		} else {
+        			dt = date.substr(6,4)+date.substr(3,2)+date.substr(0,2);
+        			return dt;
+        		}
+        	} else if (date.length == 8) {
+        		yr = date.substr(6,2);
+        		if (parseInt(yr) < 50) { 
+        			yr = '20'+yr; 
+        		} else { 
+        			yr = '19'+yr; 
+        		}
+        		if (europeandate == true) {
+        			dt = yr+date.substr(3,2)+date.substr(0,2);
+        			return dt;
+        		} else {
+        			dt = yr+date.substr(0,2)+date.substr(3,2);
+        			return dt;
+        		}
+        	}
+        	return dt;
+        }
+        
+        function ts_sort_date(a,b) {
+        	dt1 = sort_date(ts_getInnerText(a.cells[SORT_COLUMN_INDEX]));
+        	dt2 = sort_date(ts_getInnerText(b.cells[SORT_COLUMN_INDEX]));
+        	
+        	if (dt1==dt2) {
+        		return 0;
+        	}
+        	if (dt1<dt2) { 
+        		return -1;
+        	}
+        	return 1;
+        }
+        function ts_sort_numeric(a,b) {
+        	var aa = ts_getInnerText(a.cells[SORT_COLUMN_INDEX]);
+        	aa = clean_num(aa);
+        	var bb = ts_getInnerText(b.cells[SORT_COLUMN_INDEX]);
+        	bb = clean_num(bb);
+        	return compare_numeric(aa,bb);
+        }
+        function compare_numeric(a,b) {
+        	var a = parseFloat(a);
+        	a = (isNaN(a) ? 0 : a);
+        	var b = parseFloat(b);
+        	b = (isNaN(b) ? 0 : b);
+        	return a - b;
+        }
+        function ts_sort_caseinsensitive(a,b) {
+        	aa = ts_getInnerText(a.cells[SORT_COLUMN_INDEX]).toLowerCase();
+        	bb = ts_getInnerText(b.cells[SORT_COLUMN_INDEX]).toLowerCase();
+        	if (aa==bb) {
+        		return 0;
+        	}
+        	if (aa<bb) {
+        		return -1;
+        	}
+        	return 1;
+        }
+        function ts_sort_default(a,b) {
+        	aa = ts_getInnerText(a.cells[SORT_COLUMN_INDEX]);
+        	bb = ts_getInnerText(b.cells[SORT_COLUMN_INDEX]);
+        	if (aa==bb) {
+        		return 0;
+        	}
+        	if (aa<bb) {
+        		return -1;
+        	}
+        	return 1;
+        }
+        function addEvent(elm, evType, fn, useCapture)
+        // addEvent and removeEvent
+        // cross-browser event handling for IE5+,	NS6 and Mozilla
+        // By Scott Andrew
+        {
+        	if (elm.addEventListener){
+        		elm.addEventListener(evType, fn, useCapture);
+        		return true;
+        	} else if (elm.attachEvent){
+        		var r = elm.attachEvent("on"+evType, fn);
+        		return r;
+        	} else {
+        		alert("Handler could not be removed");
+        	}
+        }
+        function clean_num(str) {
+        	str = str.replace(new RegExp(/[^-?0-9.]/g),"");
+        	return str;
+        }
+        function trim(s) {
+        	return s.replace(/^\s+|\s+$/g, "");
+        }
+        function alternate(table) {
+        	// Take object table and get all it's tbodies.
+        	var tableBodies = table.getElementsByTagName("tbody");
+        	// Loop through these tbodies
+        	for (var i = 0; i < tableBodies.length; i++) {
+        		// Take the tbody, and get all it's rows
+        		var tableRows = tableBodies[i].getElementsByTagName("tr");
+        		// Loop through these rows
+        		// Start at 1 because we want to leave the heading row untouched
+        		for (var j = 0; j < tableRows.length; j++) {
+        			// Check if j is even, and apply classes for both possible results
+        			if ( (j % 2) == 0  ) {
+        				if ( !(tableRows[j].className.indexOf('odd') == -1) ) {
+        					tableRows[j].className = tableRows[j].className.replace('odd', 'even');
+        				} else {
+        					if ( tableRows[j].className.indexOf('even') == -1 ) {
+        						tableRows[j].className += " even";
+        					}
+        				}
+        			} else {
+        				if ( !(tableRows[j].className.indexOf('even') == -1) ) {
+        					tableRows[j].className = tableRows[j].className.replace('even', 'odd');
+        				} else {
+        					if ( tableRows[j].className.indexOf('odd') == -1 ) {
+        						tableRows[j].className += " odd";
+        					}
+        				}
+        			}
+        		}
+        	}
+        }
+    </script><title>Complexity Metrics</title>
+</head>
+<body>
+<div align="center"><span class="header">Complexity Metrics</span><table class="sortable" id="1" border="1" width="100%">
+<tr><th style="background-color: #C0C0C0">Name</th><th style="background-color: #C0C0C0">Source Name</th><th style="background-color: #C0C0C0">Lines Of Code</th><th style="background-color: #C0C0C0">Executable Statements</th><th style="background-color: #C0C0C0">Operators</th><th style="background-color: #C0C0C0">Operands</th><th style="background-color: #C0C0C0">Unique Operators</th><th style="background-color: #C0C0C0">Unique Operands</th><th style="background-color: #C0C0C0">Program Length</th><th style="background-color: #C0C0C0">Vocabulary</th><th style="background-color: #C0C0C0">Program Volume</th><th style="background-color: #C0C0C0">Program Level</th><th style="background-color: #C0C0C0">Programming Effort</th><th style="background-color: #C0C0C0">Difficulty</th><th style="background-color: #C0C0C0">Intelligent Content</th><th style="background-color: #C0C0C0">Programming Time</th><th style="background-color: #C0C0C0">Error Estimate</th><th style="background-color: #C0C0C0">Binary Decisions</th><th style="background-color: #C0C0C0">Unique Operands In Conditions</th><th style="background-color: #C0C0C0">Logical Operators In Conditions</th><th style="background-color: #C0C0C0">Conditional Complexity</th><th style="background-color: #C0C0C0">Cyclomatic Complexity</th><th style="background-color: #C0C0C0">Extended Cyclomatic Complexity</th><th style="background-color: #C0C0C0">Essential Complexity</th><th style="background-color: #C0C0C0">Absolute Complexity</th><th style="background-color: #C0C0C0">Maintainability Index</th><th style="background-color: #C0C0C0">3-Maintainability Index</th><th style="background-color: #C0C0C0">Recursive Number Of Source Lines With Copy</th><th style="background-color: #C0C0C0">Recursive Number Of Comments With Copy</th><th style="background-color: #C0C0C0">Number Of Code Lines Without Copy</th><th style="background-color: #C0C0C0">Commented Code Ratio</th><th style="background-color: #C0C0C0">Function Points</th><th style="background-color: #C0C0C0">Nesting Level</th><th style="background-color: #C0C0C0">Dead Statements</th><th style="background-color: #C0C0C0">Dead Statements From Includes</th><th style="background-color: #C0C0C0">Dead Data Elements</th><th style="background-color: #C0C0C0">Dead Data Elements From Includes</th><th style="background-color: #C0C0C0">Dead Lines</th><th style="background-color: #C0C0C0">Dead Lines From Includes</th><th style="background-color: #C0C0C0">Sliceable Dead Lines</th><th style="background-color: #C0C0C0">Data Elements</th><th style="background-color: #C0C0C0">Pointers</th><th style="background-color: #C0C0C0">Parameters</th><th style="background-color: #C0C0C0">Entry Points</th><th style="background-color: #C0C0C0">Returning Calls</th><th style="background-color: #C0C0C0">Non-returning Calls</th><th style="background-color: #C0C0C0">Asynchronous Calls</th><th style="background-color: #C0C0C0">Conditional Statements</th><th style="background-color: #C0C0C0">Computational Statements</th><th style="background-color: #C0C0C0">Loop Statements</th><th style="background-color: #C0C0C0">Go To Statements</th><th style="background-color: #C0C0C0">IO Statements</th><th style="background-color: #C0C0C0">Inner Procedures</th><th style="background-color: #C0C0C0">Inner Call Statements</th></tr>
+<tr>
+  <td>ADDIDEP</td>
+  <td>ADDIDEP.pli</td>
+  <td align="right">540</td>
+  <td align="right">61</td>
+  <td align="right">78</td>
+  <td align="right">188</td>
+  <td align="right">13</td>
+  <td align="right">80</td>
+  <td align="right">266</td>
+  <td align="right">93</td>
+  <td align="right">1,739.4200</td>
+  <td align="right">0.0655</td>
+  <td align="right">26,569.5800</td>
+  <td align="right">15.2800</td>
+  <td align="right">113.8700</td>
+  <td align="right">1,476.0900</td>
+  <td align="right">0.3000</td>
+  <td align="right">19</td>
+  <td align="right">31</td>
+  <td align="right">9</td>
+  <td align="right">50</td>
+  <td align="right">20</td>
+  <td align="right">29</td>
+  <td align="right">15</td>
+  <td align="right">0.3100</td>
+  <td align="right">49.4600</td>
+  <td align="right">24.3400</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">187</td>
+  <td align="right">0.1100</td>
+  <td align="right">8</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">364</td>
+  <td align="right">6</td>
+  <td align="right">10</td>
+  <td align="right">4</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">15</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">3</td>
+  <td align="right">9</td>
+</tr>
+<tr>
+  <td>ADDSUSP</td>
+  <td>ADDSUSP.pli</td>
+  <td align="right">377</td>
+  <td align="right">21</td>
+  <td align="right">23</td>
+  <td align="right">61</td>
+  <td align="right">5</td>
+  <td align="right">37</td>
+  <td align="right">84</td>
+  <td align="right">42</td>
+  <td align="right">452.9500</td>
+  <td align="right">0.2426</td>
+  <td align="right">1,866.9100</td>
+  <td align="right">4.1200</td>
+  <td align="right">109.9000</td>
+  <td align="right">103.7200</td>
+  <td align="right">0.0500</td>
+  <td align="right">2</td>
+  <td align="right">4</td>
+  <td align="right">0</td>
+  <td align="right">6</td>
+  <td align="right">3</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">0.1000</td>
+  <td align="right">75.0200</td>
+  <td align="right">43.0600</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">63</td>
+  <td align="right">0.2000</td>
+  <td align="right">5</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">313</td>
+  <td align="right">6</td>
+  <td align="right">7</td>
+  <td align="right">1</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>AIBSTR</td>
+  <td>AIBSTR.pli</td>
+  <td align="right">109</td>
+  <td align="right">21</td>
+  <td align="right">46</td>
+  <td align="right">115</td>
+  <td align="right">7</td>
+  <td align="right">50</td>
+  <td align="right">161</td>
+  <td align="right">57</td>
+  <td align="right">939.1000</td>
+  <td align="right">0.1242</td>
+  <td align="right">7,559.7200</td>
+  <td align="right">8.0500</td>
+  <td align="right">116.6600</td>
+  <td align="right">419.9800</td>
+  <td align="right">0.1300</td>
+  <td align="right">17</td>
+  <td align="right">19</td>
+  <td align="right">0</td>
+  <td align="right">36</td>
+  <td align="right">18</td>
+  <td align="right">18</td>
+  <td align="right">2</td>
+  <td align="right">0.8100</td>
+  <td align="right">91.2600</td>
+  <td align="right">55.5700</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">76</td>
+  <td align="right">0.2600</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">43</td>
+  <td align="right">3</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+</tr>
+<tr>
+  <td>CALCCHK</td>
+  <td>CALCCHK.pli</td>
+  <td align="right">23</td>
+  <td align="right">7</td>
+  <td align="right">14</td>
+  <td align="right">19</td>
+  <td align="right">8</td>
+  <td align="right">11</td>
+  <td align="right">33</td>
+  <td align="right">19</td>
+  <td align="right">140.1800</td>
+  <td align="right">0.1447</td>
+  <td align="right">968.5300</td>
+  <td align="right">6.9100</td>
+  <td align="right">20.2900</td>
+  <td align="right">53.8100</td>
+  <td align="right">0.0300</td>
+  <td align="right">2</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">5</td>
+  <td align="right">3</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">0.2900</td>
+  <td align="right">132.9700</td>
+  <td align="right">94.5300</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">21</td>
+  <td align="right">0.3100</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">12</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">2</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>CALCNCD</td>
+  <td>CALCNCD.pli</td>
+  <td align="right">79</td>
+  <td align="right">20</td>
+  <td align="right">67</td>
+  <td align="right">81</td>
+  <td align="right">15</td>
+  <td align="right">20</td>
+  <td align="right">148</td>
+  <td align="right">35</td>
+  <td align="right">759.1300</td>
+  <td align="right">0.0329</td>
+  <td align="right">23,058.6900</td>
+  <td align="right">30.3800</td>
+  <td align="right">24.9900</td>
+  <td align="right">1,281.0400</td>
+  <td align="right">0.2700</td>
+  <td align="right">9</td>
+  <td align="right">13</td>
+  <td align="right">8</td>
+  <td align="right">22</td>
+  <td align="right">10</td>
+  <td align="right">18</td>
+  <td align="right">5</td>
+  <td align="right">0.4500</td>
+  <td align="right">98.8700</td>
+  <td align="right">62.0000</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">48</td>
+  <td align="right">0.2800</td>
+  <td align="right">1</td>
+  <td align="right">4</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">38</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">9</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>CANFOTO</td>
+  <td>CANFOTO.pli</td>
+  <td align="right">395</td>
+  <td align="right">19</td>
+  <td align="right">22</td>
+  <td align="right">61</td>
+  <td align="right">6</td>
+  <td align="right">30</td>
+  <td align="right">83</td>
+  <td align="right">36</td>
+  <td align="right">429.1000</td>
+  <td align="right">0.1639</td>
+  <td align="right">2,617.5300</td>
+  <td align="right">6.1000</td>
+  <td align="right">70.3400</td>
+  <td align="right">145.4200</td>
+  <td align="right">0.0600</td>
+  <td align="right">3</td>
+  <td align="right">4</td>
+  <td align="right">0</td>
+  <td align="right">7</td>
+  <td align="right">4</td>
+  <td align="right">4</td>
+  <td align="right">2</td>
+  <td align="right">0.1600</td>
+  <td align="right">71.8300</td>
+  <td align="right">42.3300</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">85</td>
+  <td align="right">0.1600</td>
+  <td align="right">6</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">326</td>
+  <td align="right">6</td>
+  <td align="right">4</td>
+  <td align="right">1</td>
+  <td align="right">4</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>DLIERR</td>
+  <td>DLIERR.pli</td>
+  <td align="right">312</td>
+  <td align="right">82</td>
+  <td align="right">94</td>
+  <td align="right">181</td>
+  <td align="right">12</td>
+  <td align="right">91</td>
+  <td align="right">275</td>
+  <td align="right">103</td>
+  <td align="right">1,838.7900</td>
+  <td align="right">0.0838</td>
+  <td align="right">21,944.2100</td>
+  <td align="right">11.9300</td>
+  <td align="right">154.0800</td>
+  <td align="right">1,219.1200</td>
+  <td align="right">0.2600</td>
+  <td align="right">4</td>
+  <td align="right">6</td>
+  <td align="right">0</td>
+  <td align="right">10</td>
+  <td align="right">5</td>
+  <td align="right">5</td>
+  <td align="right">2</td>
+  <td align="right">0.0500</td>
+  <td align="right">70.5200</td>
+  <td align="right">37.9900</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">226</td>
+  <td align="right">0.2000</td>
+  <td align="right">5</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">158</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">5</td>
+  <td align="right">10</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">4</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">8</td>
+  <td align="right">4</td>
+  <td align="right">4</td>
+</tr>
+<tr>
+  <td>DSCLNUM</td>
+  <td>DSCLNUM.pli</td>
+  <td align="right">12</td>
+  <td align="right">2</td>
+  <td align="right">5</td>
+  <td align="right">7</td>
+  <td align="right">4</td>
+  <td align="right">4</td>
+  <td align="right">12</td>
+  <td align="right">8</td>
+  <td align="right">36.0000</td>
+  <td align="right">0.2857</td>
+  <td align="right">126.0000</td>
+  <td align="right">3.5000</td>
+  <td align="right">10.2900</td>
+  <td align="right">7.0000</td>
+  <td align="right">0.0100</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+  <td align="right">0.0000</td>
+  <td align="right">163.9600</td>
+  <td align="right">114.8300</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">7</td>
+  <td align="right">0.7800</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">4</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>DSSMADP</td>
+  <td>DSSMPADP.pli</td>
+  <td align="right">1,305</td>
+  <td align="right">266</td>
+  <td align="right">396</td>
+  <td align="right">763</td>
+  <td align="right">22</td>
+  <td align="right">266</td>
+  <td align="right">1,159</td>
+  <td align="right">288</td>
+  <td align="right">9,468.9400</td>
+  <td align="right">0.0317</td>
+  <td align="right">298,770.0700</td>
+  <td align="right">31.5500</td>
+  <td align="right">300.1000</td>
+  <td align="right">16,598.3400</td>
+  <td align="right">1.4900</td>
+  <td align="right">51</td>
+  <td align="right">80</td>
+  <td align="right">26</td>
+  <td align="right">131</td>
+  <td align="right">52</td>
+  <td align="right">78</td>
+  <td align="right">14</td>
+  <td align="right">0.1900</td>
+  <td align="right">23.7200</td>
+  <td align="right">0.0000</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">698</td>
+  <td align="right">0.2300</td>
+  <td align="right">19</td>
+  <td align="right">5</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">608</td>
+  <td align="right">14</td>
+  <td align="right">5</td>
+  <td align="right">17</td>
+  <td align="right">33</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">35</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">16</td>
+  <td align="right">20</td>
+</tr>
+<tr>
+  <td>DSSMPB3</td>
+  <td>DSSMPB3.pli</td>
+  <td align="right">204</td>
+  <td align="right">35</td>
+  <td align="right">43</td>
+  <td align="right">85</td>
+  <td align="right">7</td>
+  <td align="right">55</td>
+  <td align="right">128</td>
+  <td align="right">62</td>
+  <td align="right">762.1400</td>
+  <td align="right">0.1849</td>
+  <td align="right">4,122.4700</td>
+  <td align="right">5.4100</td>
+  <td align="right">140.9000</td>
+  <td align="right">229.0300</td>
+  <td align="right">0.0900</td>
+  <td align="right">6</td>
+  <td align="right">12</td>
+  <td align="right">1</td>
+  <td align="right">18</td>
+  <td align="right">7</td>
+  <td align="right">8</td>
+  <td align="right">2</td>
+  <td align="right">0.1700</td>
+  <td align="right">89.3000</td>
+  <td align="right">49.7400</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">76</td>
+  <td align="right">0.3400</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">135</td>
+  <td align="right">6</td>
+  <td align="right">7</td>
+  <td align="right">2</td>
+  <td align="right">4</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">6</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+</tr>
+<tr>
+  <td>DTADGRM</td>
+  <td>DTADGRM.pli</td>
+  <td align="right">125</td>
+  <td align="right">35</td>
+  <td align="right">56</td>
+  <td align="right">80</td>
+  <td align="right">11</td>
+  <td align="right">31</td>
+  <td align="right">136</td>
+  <td align="right">42</td>
+  <td align="right">733.3600</td>
+  <td align="right">0.0705</td>
+  <td align="right">10,408.9100</td>
+  <td align="right">14.1900</td>
+  <td align="right">51.6700</td>
+  <td align="right">578.2700</td>
+  <td align="right">0.1600</td>
+  <td align="right">7</td>
+  <td align="right">12</td>
+  <td align="right">1</td>
+  <td align="right">19</td>
+  <td align="right">8</td>
+  <td align="right">9</td>
+  <td align="right">2</td>
+  <td align="right">0.2000</td>
+  <td align="right">97.3900</td>
+  <td align="right">57.2000</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">81</td>
+  <td align="right">0.3500</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">58</td>
+  <td align="right">2</td>
+  <td align="right">1</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">7</td>
+  <td align="right">9</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+</tr>
+<tr>
+  <td>DTADJLD</td>
+  <td>DTADJLD.pli</td>
+  <td align="right">129</td>
+  <td align="right">40</td>
+  <td align="right">54</td>
+  <td align="right">82</td>
+  <td align="right">11</td>
+  <td align="right">28</td>
+  <td align="right">136</td>
+  <td align="right">39</td>
+  <td align="right">718.8100</td>
+  <td align="right">0.0621</td>
+  <td align="right">11,578.0500</td>
+  <td align="right">16.1100</td>
+  <td align="right">44.6300</td>
+  <td align="right">643.2300</td>
+  <td align="right">0.1700</td>
+  <td align="right">8</td>
+  <td align="right">9</td>
+  <td align="right">1</td>
+  <td align="right">17</td>
+  <td align="right">9</td>
+  <td align="right">10</td>
+  <td align="right">2</td>
+  <td align="right">0.2000</td>
+  <td align="right">91.9700</td>
+  <td align="right">56.5400</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">85</td>
+  <td align="right">0.2500</td>
+  <td align="right">2</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">54</td>
+  <td align="right">2</td>
+  <td align="right">1</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">8</td>
+  <td align="right">6</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+</tr>
+<tr>
+  <td>DTADJLM</td>
+  <td>DTADJLM.pli</td>
+  <td align="right">137</td>
+  <td align="right">41</td>
+  <td align="right">45</td>
+  <td align="right">76</td>
+  <td align="right">6</td>
+  <td align="right">42</td>
+  <td align="right">121</td>
+  <td align="right">48</td>
+  <td align="right">675.7800</td>
+  <td align="right">0.1842</td>
+  <td align="right">3,668.5200</td>
+  <td align="right">5.4300</td>
+  <td align="right">124.4900</td>
+  <td align="right">203.8100</td>
+  <td align="right">0.0800</td>
+  <td align="right">4</td>
+  <td align="right">6</td>
+  <td align="right">1</td>
+  <td align="right">10</td>
+  <td align="right">5</td>
+  <td align="right">6</td>
+  <td align="right">2</td>
+  <td align="right">0.1000</td>
+  <td align="right">97.7800</td>
+  <td align="right">57.3900</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">56</td>
+  <td align="right">0.3600</td>
+  <td align="right">2</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">72</td>
+  <td align="right">5</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">4</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>DTCNVCH</td>
+  <td>DTCNVCH.pli</td>
+  <td align="right">162</td>
+  <td align="right">45</td>
+  <td align="right">54</td>
+  <td align="right">92</td>
+  <td align="right">10</td>
+  <td align="right">56</td>
+  <td align="right">146</td>
+  <td align="right">66</td>
+  <td align="right">882.4800</td>
+  <td align="right">0.1217</td>
+  <td align="right">7,248.9600</td>
+  <td align="right">8.2100</td>
+  <td align="right">107.4300</td>
+  <td align="right">402.7200</td>
+  <td align="right">0.1200</td>
+  <td align="right">6</td>
+  <td align="right">11</td>
+  <td align="right">1</td>
+  <td align="right">17</td>
+  <td align="right">7</td>
+  <td align="right">8</td>
+  <td align="right">2</td>
+  <td align="right">0.1300</td>
+  <td align="right">87.0900</td>
+  <td align="right">52.2900</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">103</td>
+  <td align="right">0.2400</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">86</td>
+  <td align="right">3</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">6</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>DTCNVJL</td>
+  <td>DTCNVJL.pli</td>
+  <td align="right">310</td>
+  <td align="right">96</td>
+  <td align="right">112</td>
+  <td align="right">196</td>
+  <td align="right">15</td>
+  <td align="right">106</td>
+  <td align="right">308</td>
+  <td align="right">121</td>
+  <td align="right">2,131.0100</td>
+  <td align="right">0.0721</td>
+  <td align="right">29,552.6800</td>
+  <td align="right">13.8700</td>
+  <td align="right">153.6600</td>
+  <td align="right">1,641.8200</td>
+  <td align="right">0.3200</td>
+  <td align="right">21</td>
+  <td align="right">29</td>
+  <td align="right">4</td>
+  <td align="right">50</td>
+  <td align="right">22</td>
+  <td align="right">26</td>
+  <td align="right">17</td>
+  <td align="right">0.2200</td>
+  <td align="right">63.7400</td>
+  <td align="right">32.7100</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">201</td>
+  <td align="right">0.1800</td>
+  <td align="right">4</td>
+  <td align="right">4</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">136</td>
+  <td align="right">4</td>
+  <td align="right">1</td>
+  <td align="right">5</td>
+  <td align="right">12</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">12</td>
+  <td align="right">2</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">4</td>
+  <td align="right">11</td>
+</tr>
+<tr>
+  <td>DTCNVRT</td>
+  <td>DTCNVRT.pli</td>
+  <td align="right">390</td>
+  <td align="right">145</td>
+  <td align="right">182</td>
+  <td align="right">315</td>
+  <td align="right">14</td>
+  <td align="right">102</td>
+  <td align="right">497</td>
+  <td align="right">116</td>
+  <td align="right">3,408.4200</td>
+  <td align="right">0.0463</td>
+  <td align="right">73,681.9500</td>
+  <td align="right">21.6200</td>
+  <td align="right">157.6700</td>
+  <td align="right">4,093.4400</td>
+  <td align="right">0.5900</td>
+  <td align="right">32</td>
+  <td align="right">27</td>
+  <td align="right">15</td>
+  <td align="right">59</td>
+  <td align="right">33</td>
+  <td align="right">48</td>
+  <td align="right">17</td>
+  <td align="right">0.2200</td>
+  <td align="right">51.8100</td>
+  <td align="right">21.3500</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">283</td>
+  <td align="right">0.1700</td>
+  <td align="right">6</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">126</td>
+  <td align="right">4</td>
+  <td align="right">1</td>
+  <td align="right">6</td>
+  <td align="right">18</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">14</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">5</td>
+  <td align="right">17</td>
+</tr>
+<tr>
+  <td>DTEDIT</td>
+  <td>DTEDIT.pli</td>
+  <td align="right">423</td>
+  <td align="right">136</td>
+  <td align="right">187</td>
+  <td align="right">294</td>
+  <td align="right">14</td>
+  <td align="right">124</td>
+  <td align="right">481</td>
+  <td align="right">138</td>
+  <td align="right">3,419.2000</td>
+  <td align="right">0.0603</td>
+  <td align="right">56,747.6900</td>
+  <td align="right">16.6000</td>
+  <td align="right">206.0200</td>
+  <td align="right">3,152.6500</td>
+  <td align="right">0.4900</td>
+  <td align="right">33</td>
+  <td align="right">39</td>
+  <td align="right">17</td>
+  <td align="right">72</td>
+  <td align="right">34</td>
+  <td align="right">51</td>
+  <td align="right">16</td>
+  <td align="right">0.2400</td>
+  <td align="right">41.1200</td>
+  <td align="right">19.2200</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">328</td>
+  <td align="right">0.0800</td>
+  <td align="right">6</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">144</td>
+  <td align="right">3</td>
+  <td align="right">1</td>
+  <td align="right">3</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">22</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+</tr>
+<tr>
+  <td>DTFAJ6D</td>
+  <td>DTFAJ6D.pli</td>
+  <td align="right">29</td>
+  <td align="right">9</td>
+  <td align="right">10</td>
+  <td align="right">17</td>
+  <td align="right">5</td>
+  <td align="right">12</td>
+  <td align="right">27</td>
+  <td align="right">17</td>
+  <td align="right">110.3600</td>
+  <td align="right">0.2824</td>
+  <td align="right">390.8600</td>
+  <td align="right">3.5400</td>
+  <td align="right">31.1600</td>
+  <td align="right">21.7100</td>
+  <td align="right">0.0200</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">0.1100</td>
+  <td align="right">139.5500</td>
+  <td align="right">92.6900</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">16</td>
+  <td align="right">0.6000</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">15</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>DTFAJ6M</td>
+  <td>DTFAJ6M.pli</td>
+  <td align="right">29</td>
+  <td align="right">9</td>
+  <td align="right">10</td>
+  <td align="right">17</td>
+  <td align="right">5</td>
+  <td align="right">12</td>
+  <td align="right">27</td>
+  <td align="right">17</td>
+  <td align="right">110.3600</td>
+  <td align="right">0.2824</td>
+  <td align="right">390.8600</td>
+  <td align="right">3.5400</td>
+  <td align="right">31.1600</td>
+  <td align="right">21.7100</td>
+  <td align="right">0.0200</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">0.1100</td>
+  <td align="right">139.5500</td>
+  <td align="right">92.6900</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">16</td>
+  <td align="right">0.6000</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">15</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>DTFSDT6</td>
+  <td>DTFSDT6.pli</td>
+  <td align="right">48</td>
+  <td align="right">9</td>
+  <td align="right">10</td>
+  <td align="right">17</td>
+  <td align="right">5</td>
+  <td align="right">11</td>
+  <td align="right">27</td>
+  <td align="right">16</td>
+  <td align="right">108.0000</td>
+  <td align="right">0.2588</td>
+  <td align="right">417.2700</td>
+  <td align="right">3.8600</td>
+  <td align="right">27.9500</td>
+  <td align="right">23.1800</td>
+  <td align="right">0.0200</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">0.1100</td>
+  <td align="right">130.7900</td>
+  <td align="right">84.8900</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">17</td>
+  <td align="right">0.5500</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">31</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>DTSLIDE</td>
+  <td>DTSLIDE.pli</td>
+  <td align="right">55</td>
+  <td align="right">12</td>
+  <td align="right">16</td>
+  <td align="right">24</td>
+  <td align="right">7</td>
+  <td align="right">20</td>
+  <td align="right">40</td>
+  <td align="right">27</td>
+  <td align="right">190.2000</td>
+  <td align="right">0.2381</td>
+  <td align="right">798.8200</td>
+  <td align="right">4.2000</td>
+  <td align="right">45.2800</td>
+  <td align="right">44.3800</td>
+  <td align="right">0.0300</td>
+  <td align="right">2</td>
+  <td align="right">5</td>
+  <td align="right">0</td>
+  <td align="right">7</td>
+  <td align="right">3</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">0.1700</td>
+  <td align="right">119.1100</td>
+  <td align="right">78.7000</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">47</td>
+  <td align="right">0.3600</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">35</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>DTSYSDT</td>
+  <td>DTSYSDT.pli</td>
+  <td align="right">112</td>
+  <td align="right">29</td>
+  <td align="right">29</td>
+  <td align="right">60</td>
+  <td align="right">4</td>
+  <td align="right">44</td>
+  <td align="right">89</td>
+  <td align="right">48</td>
+  <td align="right">497.0600</td>
+  <td align="right">0.3667</td>
+  <td align="right">1,355.6200</td>
+  <td align="right">2.7300</td>
+  <td align="right">182.2600</td>
+  <td align="right">75.3100</td>
+  <td align="right">0.0400</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">0.0300</td>
+  <td align="right">103.3700</td>
+  <td align="right">62.8600</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">57</td>
+  <td align="right">0.3600</td>
+  <td align="right">2</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">68</td>
+  <td align="right">3</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+</tr>
+<tr>
+  <td>EDTALRT</td>
+  <td>EDTALRT.pli</td>
+  <td align="right">24</td>
+  <td align="right">6</td>
+  <td align="right">9</td>
+  <td align="right">12</td>
+  <td align="right">5</td>
+  <td align="right">9</td>
+  <td align="right">21</td>
+  <td align="right">14</td>
+  <td align="right">79.9500</td>
+  <td align="right">0.3000</td>
+  <td align="right">266.5100</td>
+  <td align="right">3.3300</td>
+  <td align="right">23.9900</td>
+  <td align="right">14.8100</td>
+  <td align="right">0.0100</td>
+  <td align="right">1</td>
+  <td align="right">3</td>
+  <td align="right">1</td>
+  <td align="right">4</td>
+  <td align="right">2</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">0.1700</td>
+  <td align="right">141.9100</td>
+  <td align="right">97.4500</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">20</td>
+  <td align="right">0.4900</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">5</td>
+  <td align="right">0</td>
+  <td align="right">3</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>EDTNOVW</td>
+  <td>EDTNOVW.pli</td>
+  <td align="right">24</td>
+  <td align="right">6</td>
+  <td align="right">9</td>
+  <td align="right">12</td>
+  <td align="right">5</td>
+  <td align="right">9</td>
+  <td align="right">21</td>
+  <td align="right">14</td>
+  <td align="right">79.9500</td>
+  <td align="right">0.3000</td>
+  <td align="right">266.5100</td>
+  <td align="right">3.3300</td>
+  <td align="right">23.9900</td>
+  <td align="right">14.8100</td>
+  <td align="right">0.0100</td>
+  <td align="right">1</td>
+  <td align="right">3</td>
+  <td align="right">1</td>
+  <td align="right">4</td>
+  <td align="right">2</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">0.1700</td>
+  <td align="right">141.9100</td>
+  <td align="right">97.4500</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">20</td>
+  <td align="right">0.4900</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">5</td>
+  <td align="right">0</td>
+  <td align="right">3</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>FINDPCB</td>
+  <td>FINDPCB.pli</td>
+  <td align="right">87</td>
+  <td align="right">9</td>
+  <td align="right">10</td>
+  <td align="right">18</td>
+  <td align="right">5</td>
+  <td align="right">15</td>
+  <td align="right">28</td>
+  <td align="right">20</td>
+  <td align="right">121.0100</td>
+  <td align="right">0.3333</td>
+  <td align="right">363.0400</td>
+  <td align="right">3.0000</td>
+  <td align="right">40.3400</td>
+  <td align="right">20.1700</td>
+  <td align="right">0.0200</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">2</td>
+  <td align="right">0.1100</td>
+  <td align="right">119.3700</td>
+  <td align="right">73.6300</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">22</td>
+  <td align="right">0.5400</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">73</td>
+  <td align="right">4</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>GETMSCD</td>
+  <td>GETMSCD.pli</td>
+  <td align="right">449</td>
+  <td align="right">35</td>
+  <td align="right">45</td>
+  <td align="right">92</td>
+  <td align="right">10</td>
+  <td align="right">55</td>
+  <td align="right">137</td>
+  <td align="right">65</td>
+  <td align="right">825.0600</td>
+  <td align="right">0.1196</td>
+  <td align="right">6,900.5400</td>
+  <td align="right">8.3600</td>
+  <td align="right">98.6500</td>
+  <td align="right">383.3600</td>
+  <td align="right">0.1200</td>
+  <td align="right">6</td>
+  <td align="right">15</td>
+  <td align="right">1</td>
+  <td align="right">21</td>
+  <td align="right">7</td>
+  <td align="right">8</td>
+  <td align="right">2</td>
+  <td align="right">0.1700</td>
+  <td align="right">75.1300</td>
+  <td align="right">35.8900</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">93</td>
+  <td align="right">0.3300</td>
+  <td align="right">6</td>
+  <td align="right">4</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">363</td>
+  <td align="right">7</td>
+  <td align="right">5</td>
+  <td align="right">2</td>
+  <td align="right">4</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">6</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+</tr>
+<tr>
+  <td>LEAPYR</td>
+  <td>LEAPYR.pli</td>
+  <td align="right">9</td>
+  <td align="right">4</td>
+  <td align="right">9</td>
+  <td align="right">11</td>
+  <td align="right">7</td>
+  <td align="right">7</td>
+  <td align="right">20</td>
+  <td align="right">14</td>
+  <td align="right">76.1500</td>
+  <td align="right">0.1818</td>
+  <td align="right">418.8100</td>
+  <td align="right">5.5000</td>
+  <td align="right">13.8400</td>
+  <td align="right">23.2700</td>
+  <td align="right">0.0200</td>
+  <td align="right">1</td>
+  <td align="right">5</td>
+  <td align="right">2</td>
+  <td align="right">6</td>
+  <td align="right">2</td>
+  <td align="right">4</td>
+  <td align="right">2</td>
+  <td align="right">0.2500</td>
+  <td align="right">158.1700</td>
+  <td align="right">111.9600</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">9</td>
+  <td align="right">0.5700</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>MTRDB2B</td>
+  <td>MTRDB2B.pli</td>
+  <td align="right">233</td>
+  <td align="right">67</td>
+  <td align="right">89</td>
+  <td align="right">144</td>
+  <td align="right">11</td>
+  <td align="right">82</td>
+  <td align="right">233</td>
+  <td align="right">93</td>
+  <td align="right">1,523.6200</td>
+  <td align="right">0.1035</td>
+  <td align="right">14,715.9800</td>
+  <td align="right">9.6600</td>
+  <td align="right">157.7500</td>
+  <td align="right">817.5500</td>
+  <td align="right">0.2000</td>
+  <td align="right">5</td>
+  <td align="right">9</td>
+  <td align="right">0</td>
+  <td align="right">14</td>
+  <td align="right">6</td>
+  <td align="right">6</td>
+  <td align="right">2</td>
+  <td align="right">0.0700</td>
+  <td align="right">72.4500</td>
+  <td align="right">43.3400</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">229</td>
+  <td align="right">0.1600</td>
+  <td align="right">3</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">156</td>
+  <td align="right">0</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">5</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">18</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+</tr>
+<tr>
+  <td>MTRHDB2</td>
+  <td>MTRHDB2.pli</td>
+  <td align="right">606</td>
+  <td align="right">208</td>
+  <td align="right">290</td>
+  <td align="right">481</td>
+  <td align="right">16</td>
+  <td align="right">209</td>
+  <td align="right">771</td>
+  <td align="right">225</td>
+  <td align="right">6,024.4300</td>
+  <td align="right">0.0543</td>
+  <td align="right">110,918.6100</td>
+  <td align="right">18.4100</td>
+  <td align="right">327.2100</td>
+  <td align="right">6,162.1400</td>
+  <td align="right">0.7700</td>
+  <td align="right">12</td>
+  <td align="right">20</td>
+  <td align="right">2</td>
+  <td align="right">32</td>
+  <td align="right">13</td>
+  <td align="right">15</td>
+  <td align="right">2</td>
+  <td align="right">0.0600</td>
+  <td align="right">44.6900</td>
+  <td align="right">18.6300</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">567</td>
+  <td align="right">0.1200</td>
+  <td align="right">9</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">321</td>
+  <td align="right">3</td>
+  <td align="right">3</td>
+  <td align="right">4</td>
+  <td align="right">10</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">10</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">18</td>
+  <td align="right">3</td>
+  <td align="right">3</td>
+</tr>
+<tr>
+  <td>MTRHDLI</td>
+  <td>MTRHDLI.pli</td>
+  <td align="right">737</td>
+  <td align="right">265</td>
+  <td align="right">365</td>
+  <td align="right">845</td>
+  <td align="right">19</td>
+  <td align="right">216</td>
+  <td align="right">1,210</td>
+  <td align="right">235</td>
+  <td align="right">9,530.5900</td>
+  <td align="right">0.0269</td>
+  <td align="right">354,198.0300</td>
+  <td align="right">37.1600</td>
+  <td align="right">256.4400</td>
+  <td align="right">19,677.6700</td>
+  <td align="right">1.6700</td>
+  <td align="right">54</td>
+  <td align="right">55</td>
+  <td align="right">5</td>
+  <td align="right">109</td>
+  <td align="right">55</td>
+  <td align="right">60</td>
+  <td align="right">27</td>
+  <td align="right">0.2000</td>
+  <td align="right">34.1400</td>
+  <td align="right">2.7300</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">657</td>
+  <td align="right">0.1900</td>
+  <td align="right">11</td>
+  <td align="right">4</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">263</td>
+  <td align="right">5</td>
+  <td align="right">21</td>
+  <td align="right">9</td>
+  <td align="right">34</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">35</td>
+  <td align="right">2</td>
+  <td align="right">9</td>
+  <td align="right">0</td>
+  <td align="right">13</td>
+  <td align="right">8</td>
+  <td align="right">13</td>
+</tr>
+<tr>
+  <td>MTRHSQL</td>
+  <td>MTRHSQL.pli</td>
+  <td align="right">57</td>
+  <td align="right">5</td>
+  <td align="right">5</td>
+  <td align="right">15</td>
+  <td align="right">3</td>
+  <td align="right">12</td>
+  <td align="right">20</td>
+  <td align="right">15</td>
+  <td align="right">78.1400</td>
+  <td align="right">0.5333</td>
+  <td align="right">146.5100</td>
+  <td align="right">1.8800</td>
+  <td align="right">41.6700</td>
+  <td align="right">8.1400</td>
+  <td align="right">0.0100</td>
+  <td align="right">2</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">5</td>
+  <td align="right">3</td>
+  <td align="right">3</td>
+  <td align="right">2</td>
+  <td align="right">0.4000</td>
+  <td align="right">129.4000</td>
+  <td align="right">83.6400</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">41</td>
+  <td align="right">0.5400</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">35</td>
+  <td align="right">4</td>
+  <td align="right">5</td>
+  <td align="right">1</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>STATDAO</td>
+  <td>STATDAO.pli</td>
+  <td align="right">374</td>
+  <td align="right">95</td>
+  <td align="right">103</td>
+  <td align="right">217</td>
+  <td align="right">10</td>
+  <td align="right">106</td>
+  <td align="right">320</td>
+  <td align="right">116</td>
+  <td align="right">2,194.5500</td>
+  <td align="right">0.0977</td>
+  <td align="right">22,463.1200</td>
+  <td align="right">10.2400</td>
+  <td align="right">214.4000</td>
+  <td align="right">1,247.9500</td>
+  <td align="right">0.2700</td>
+  <td align="right">19</td>
+  <td align="right">13</td>
+  <td align="right">2</td>
+  <td align="right">32</td>
+  <td align="right">20</td>
+  <td align="right">22</td>
+  <td align="right">30</td>
+  <td align="right">0.2000</td>
+  <td align="right">62.5200</td>
+  <td align="right">30.4400</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">271</td>
+  <td align="right">0.2000</td>
+  <td align="right">5</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">174</td>
+  <td align="right">3</td>
+  <td align="right">5</td>
+  <td align="right">9</td>
+  <td align="right">28</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">11</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">8</td>
+  <td align="right">20</td>
+</tr>
+<tr>
+  <td>STRRJST</td>
+  <td>STRRJST.pli</td>
+  <td align="right">23</td>
+  <td align="right">9</td>
+  <td align="right">18</td>
+  <td align="right">29</td>
+  <td align="right">10</td>
+  <td align="right">7</td>
+  <td align="right">47</td>
+  <td align="right">17</td>
+  <td align="right">192.1100</td>
+  <td align="right">0.0483</td>
+  <td align="right">3,979.4400</td>
+  <td align="right">20.7100</td>
+  <td align="right">9.2700</td>
+  <td align="right">221.0800</td>
+  <td align="right">0.0800</td>
+  <td align="right">3</td>
+  <td align="right">7</td>
+  <td align="right">1</td>
+  <td align="right">10</td>
+  <td align="right">4</td>
+  <td align="right">5</td>
+  <td align="right">2</td>
+  <td align="right">0.3300</td>
+  <td align="right">136.9400</td>
+  <td align="right">93.1900</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">23</td>
+  <td align="right">0.4600</td>
+  <td align="right">0</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">8</td>
+  <td align="right">0</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">3</td>
+  <td align="right">1</td>
+  <td align="right">1</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+</tr>
+<tr>
+  <td>UPDALRT</td>
+  <td>UPDALRT.pli</td>
+  <td align="right">264</td>
+  <td align="right">46</td>
+  <td align="right">50</td>
+  <td align="right">124</td>
+  <td align="right">9</td>
+  <td align="right">69</td>
+  <td align="right">174</td>
+  <td align="right">78</td>
+  <td align="right">1,093.6600</td>
+  <td align="right">0.1237</td>
+  <td align="right">8,844.3800</td>
+  <td align="right">8.0900</td>
+  <td align="right">135.2400</td>
+  <td align="right">491.3500</td>
+  <td align="right">0.1400</td>
+  <td align="right">6</td>
+  <td align="right">23</td>
+  <td align="right">0</td>
+  <td align="right">29</td>
+  <td align="right">7</td>
+  <td align="right">7</td>
+  <td align="right">2</td>
+  <td align="right">0.1300</td>
+  <td align="right">89.2400</td>
+  <td align="right">43.3000</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">94</td>
+  <td align="right">0.5500</td>
+  <td align="right">4</td>
+  <td align="right">2</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">115</td>
+  <td align="right">6</td>
+  <td align="right">7</td>
+  <td align="right">4</td>
+  <td align="right">5</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">6</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">3</td>
+  <td align="right">3</td>
+</tr>
+<tr>
+  <td>USBYCHG</td>
+  <td>USBYCHG.pli</td>
+  <td align="right">285</td>
+  <td align="right">66</td>
+  <td align="right">118</td>
+  <td align="right">214</td>
+  <td align="right">12</td>
+  <td align="right">55</td>
+  <td align="right">332</td>
+  <td align="right">67</td>
+  <td align="right">2,013.9400</td>
+  <td align="right">0.0428</td>
+  <td align="right">47,016.3800</td>
+  <td align="right">23.3500</td>
+  <td align="right">86.2700</td>
+  <td align="right">2,612.0200</td>
+  <td align="right">0.4300</td>
+  <td align="right">20</td>
+  <td align="right">15</td>
+  <td align="right">16</td>
+  <td align="right">35</td>
+  <td align="right">21</td>
+  <td align="right">37</td>
+  <td align="right">2</td>
+  <td align="right">0.3000</td>
+  <td align="right">73.9500</td>
+  <td align="right">31.6500</td>
+  <td align="right">N/A</td>
+  <td align="right">N/A</td>
+  <td align="right">209</td>
+  <td align="right">0.4100</td>
+  <td align="right">4</td>
+  <td align="right">3</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">70</td>
+  <td align="right">1</td>
+  <td align="right">12</td>
+  <td align="right">9</td>
+  <td align="right">16</td>
+  <td align="right">0</td>
+  <td align="right">N/A</td>
+  <td align="right">20</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">0</td>
+  <td align="right">8</td>
+  <td align="right">8</td>
+</tr>
+</table><br><div align="right"><span class="date">Report generated at 2:48:51 PM 8/18/2023.</span></div></div><br><br>
+</body>
+</html>
